@@ -21,6 +21,11 @@ public class Controls : MonoBehaviour
         return Input.GetMouseButton(1); //mantengo click derecho para apuntar, eso habilita el aim
     }
 
+    public float GetMouseXInput()
+    {
+        return Input.GetAxis("Mouse X");
+    }
+
     //public Vector3 GetMovementInput()
     //{
     //    float horizontal = Input.GetAxis("Horizontal");
