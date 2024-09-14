@@ -56,11 +56,11 @@ Material:
     m_Floats:
     - _Alpha: 2
     - _Fresnel_Power: 1
-    - _Gloss: 0.71
+    - _Gloss: 0.7
     - _Pan_Speed: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Main_Color: {r: 0.2498398, g: 0.3884447, b: 0.5471698, a: 0}
-    - _Top_Color: {r: 0.6187611, g: 0.8234081, b: 0.8584906, a: 0}
+    - _Main_Color: {r: 0.14195494, g: 0.7169812, b: 0.13798502, a: 0}
+    - _Top_Color: {r: 0.46894208, g: 0.8207547, b: 0.3670167, a: 0}
   m_BuildTextureStacks: []
