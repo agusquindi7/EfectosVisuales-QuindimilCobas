@@ -2,28 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour , IObserver
+public class SoundThermalKey : MonoBehaviour, IObserver
 {
-    public GameObject text;
+    public AudioClip sfx;
+    [SerializeField] AudioSource aSource;
     IObservable _obs;
 
-    private void Start()
+    private void Awake()
     {
-        _obs = GetComponentInParent<IObservable>();
+        _obs = GetComponent<IObservable>();
         if (_obs != null)
             _obs.Subscribe(this);
     }
 
     public void Notify(bool isOnButton)
     {
-        if (isOnButton) 
-        {
-            text.SetActive (true);
-        }
-        else
-        {
-            text.SetActive(false);
-        }
+        aSource.PlayOneShot(sfx,1f);
     }
 
     private void OnDestroy()

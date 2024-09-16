@@ -23,7 +23,7 @@ public class LaserDoor : MonoBehaviour, IObserver
 
     public void Notify(bool isOnButton)
     {
-        if (isOnButton && isPressingButton)
+        if (isOnButton)
         {
             laserRays.SetActive(false);
         }

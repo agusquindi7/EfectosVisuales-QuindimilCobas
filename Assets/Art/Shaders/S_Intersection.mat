@@ -25,7 +25,8 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -36,6 +37,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_23ae6b4b4ea3499e953617e6f9b5d3f4_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 32f889059f918d54990bb38ec33776e7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture:
         m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
@@ -54,10 +59,28 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0.25
+    - _AlphaToMask: 0
+    - _BaseHeight: 6.18
+    - _BaseIntensity: -0.45
+    - _Blend: 0
+    - _CastShadows: 0
+    - _Cull: 0
+    - _DstBlend: 10
     - _IntersectionDepth: 1.65
+    - _Noise: 8
     - _PanSpeed: 8
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _TopHeight: 0.92
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
+    - _BaseColor: {r: 1.38753, g: 0, b: 0.01415218, a: 0}
+    - _Color: {r: 2.996078, g: 1.223117, b: 0, a: 0}
     - _IntersectionColor: {r: 0, g: 0.57394695, b: 2, a: 0}
+    - _PanSpeedCoor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
