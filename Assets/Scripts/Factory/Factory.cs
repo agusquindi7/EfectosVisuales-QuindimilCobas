@@ -7,6 +7,5 @@ public abstract class Factory<T> : MonoBehaviour//una clase con generic
 {
    //public abstract Bullets Create();
    public abstract T Create();
-
-
+    
 }

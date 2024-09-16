@@ -2,8 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Movement
 {
+    Transform _transform;
+    Rigidbody _rb;
+    float _speed;
+    float _forceJump;
+    bool _canMove;
+
+    //public Movement(Transform transform, Rigidbody rb, float speed, float forcejump, bool canMove) //al no heredar de monobehabiour se lo pido a player
+    public Movement(Transform transform, Rigidbody rb, float speed, float forcejump) //al no heredar de monobehabiour se lo pido a player
+    {
+        _transform = transform;
+        _rb = rb;
+        _speed = speed;
+        _forceJump = forcejump;
+        //_canMove = canMove;
+    }
+
+    //public bool CanMove()
+    //{        
+    //}
+
+    public void Move(float horizontal, float vertical)
+    {
+        var dir = _transform.forward * vertical;
+        dir += _transform.right * horizontal;
+
+        //_transform.position = dir.normalized * _speed * Time.deltaTime;
+        Vector3 newPosition = _rb.position + dir.normalized * _speed * Time.deltaTime;
+        _rb.MovePosition(newPosition);
+    }
+
+    public void CanonBall()
+    {
+        _rb.AddForce(Vector3.up * _forceJump, ForceMode.Impulse);
+    }
+
+    /*
     public float moveSpeed = 5f;
     public Transform cameraTransform; // Referencia al Transform de la cámara
     private Controls playerInput;
@@ -45,7 +81,7 @@ public class Movement : MonoBehaviour
 
         // Mover el jugador en la dirección deseada
         transform.Translate(desiredDirection * moveSpeed * Time.deltaTime, Space.World);
-    }
+    }*/
 
     /*
     public float moveSpeed = 5f;
