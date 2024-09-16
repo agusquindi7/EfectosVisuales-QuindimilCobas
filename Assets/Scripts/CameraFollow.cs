@@ -4,6 +4,72 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public Transform player;
+    public float distance = 4f; // Distancia normal
+    public float aimDistance = 3f; // Distancia al apuntar
+    public float height = 2f;
+    public float rotationSpeed = 5f;
+    public float sensitivity = 1f;
+    public float cameraSmoothness = 0.1f;
+    public float verticalAngleMin = -10f;
+    public float verticalAngleMax = 60f;
+
+    private float currentDistance; // La distancia actual (para interpolar)
+    private float horizontalRotation;
+    private float verticalRotation;
+    private float currentVerticalRotation;
+    private Controls playerInput;
+
+    void Start()
+    {
+        // Inicializamos la distancia actual con la distancia normal
+        currentDistance = distance;
+        //playerInput = player.GetComponent<Controls>();
+
+        horizontalRotation = transform.eulerAngles.y;
+        verticalRotation = transform.eulerAngles.x;
+    }
+
+    void LateUpdate()
+    {
+        //// Si estamos apuntando, ajustamos la distancia de la cámara
+        //if (playerInput.IsAiming())
+        //{
+        //    currentDistance = Mathf.Lerp(currentDistance, aimDistance, cameraSmoothness); // Acercar la cámara
+        //}
+        //else
+        //{
+        //    currentDistance = Mathf.Lerp(currentDistance, distance, cameraSmoothness); // Alejar la cámara
+        //}
+
+        RotateCamera();
+
+        Vector3 desiredPosition = CalculateCameraPosition();
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, cameraSmoothness);
+
+        // Mirar al jugador
+        transform.LookAt(player.position + Vector3.up * height);
+    }
+
+    private void RotateCamera()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * rotationSpeed * sensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed * sensitivity;
+
+        horizontalRotation += mouseX;
+        verticalRotation -= mouseY;
+        verticalRotation = Mathf.Clamp(verticalRotation, verticalAngleMin, verticalAngleMax);
+
+        currentVerticalRotation = Mathf.Lerp(currentVerticalRotation, verticalRotation, cameraSmoothness);
+    }
+
+    private Vector3 CalculateCameraPosition()
+    {
+        Quaternion rotation = Quaternion.Euler(currentVerticalRotation, horizontalRotation, 0f);
+        Vector3 offset = new Vector3(0, height, -currentDistance); // Usar currentDistance para interpolar
+        return player.position + rotation * offset;
+    }
+    /*
     public Transform player; // El transform del jugador al que sigue la cámara
 
     public float distance = 4f; // Distancia desde la cámara al jugador
@@ -62,6 +128,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 offset = new Vector3(0, height, -distance);
         return player.position + rotation * offset;
     }
+    */
 
     /*
     public Transform player;        // Referencia al transform del jugador
