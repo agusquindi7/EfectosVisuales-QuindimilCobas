@@ -54,7 +54,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 2
+    - _Alpha: 3
     - _Fresnel_Power: 1
     - _Gloss: 0.7
     - _Pan_Speed: 0.02
