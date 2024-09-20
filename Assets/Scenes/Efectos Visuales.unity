@@ -556,12 +556,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 303970781}
   bulletSpawner: {fileID: 2118342534}
-  speed: 5
-  forceJump: 3
+  speed: 7
+  forceJump: 10
   cdShoot: 1
   cdShootReload: 0
-  ammo: 10
+  ammo: 100
   factory: {fileID: 153363101}
+  launchForce: 300
+  cameraTransform: {fileID: 963194228}
+  rotationSpeed: 10
+  cameraDistance: 8
+  aimCameraDistance: 2
+  cameraHeight: 4
+  cameraRotationSpeed: 10
+  cameraSensitivity: 0.5
+  cameraSmoothness: 0.1
+  cameraVerticalAngleMin: -10
+  cameraVerticalAngleMax: 60
+  monoBehaviour: {fileID: 303970782}
 --- !u!1 &346492535
 GameObject:
   m_ObjectHideFlags: 0
@@ -30581,7 +30593,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -30707,27 +30718,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &963194231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eaac239398bdde40b53068a258ef238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 303970775}
-  distance: 14
-  aimDistance: 3
-  height: 2
-  rotationSpeed: 3
-  sensitivity: 1
-  cameraSmoothness: 0.1
-  verticalAngleMin: -10
-  verticalAngleMax: 60
 --- !u!1 &1025925203
 GameObject:
   m_ObjectHideFlags: 0

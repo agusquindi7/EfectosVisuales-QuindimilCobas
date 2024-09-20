@@ -2,8 +2,104 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollow
 {
+    // Mantener el código tal cual
+    private Transform _player;
+    private Transform _camera;
+    private float _distance;
+    private float _aimDistance;
+    private float _height;
+    private float _rotationSpeed;
+    private float _sensitivity;
+    private float _cameraSmoothness;
+    private float _verticalAngleMin;
+    private float _verticalAngleMax;
+    private Controls _controls;
+
+    private float currentDistance;
+    private float horizontalRotation;
+    private float verticalRotation;
+    private float currentVerticalRotation;
+
+    public CameraFollow(Transform player, Transform camera, float distance,
+        float aimDistance, float height, float rotationSpeed, float sensitivity,
+        float cameraSmoothness, float verticalAngleMin, float verticalAngleMax, Controls controls)
+    {
+        _player = player;
+        _camera = camera;
+        _distance = distance;
+        _aimDistance = aimDistance;
+        _height = height;
+        _rotationSpeed = rotationSpeed;
+        _sensitivity = sensitivity;
+        _cameraSmoothness = cameraSmoothness;
+        _verticalAngleMin = verticalAngleMin;
+        _verticalAngleMax = verticalAngleMax;
+        _controls = controls;
+
+        currentDistance = distance;
+        horizontalRotation = camera.eulerAngles.y;
+        verticalRotation = camera.eulerAngles.x;
+    }
+
+    //esto es por si quiero actualizar valores en el update de Player
+    public void UpdateValues(float distance, float aimDistance, float height,
+        float rotationSpeed, float sensitivity, float cameraSmoothness,
+        float verticalAngleMin, float verticalAngleMax)
+    {
+        _distance = distance;
+        _aimDistance = aimDistance;
+        _height = height;
+        _rotationSpeed = rotationSpeed;
+        _sensitivity = sensitivity;
+        _cameraSmoothness = cameraSmoothness;
+        _verticalAngleMin = verticalAngleMin;
+        _verticalAngleMax = verticalAngleMax;
+        currentDistance = distance;
+    }
+
+    public float GetHorizontalRotation()
+    {
+        return horizontalRotation;
+    }
+
+    public void LateUpdate()
+    {
+        RotateCamera();
+
+        Vector3 desiredPosition = CalculateCameraPosition();
+        _camera.position = Vector3.Lerp(_camera.position, desiredPosition, _cameraSmoothness);
+
+        // La cámara mira al jugador
+        _camera.LookAt(_player.position + Vector3.up * _height);
+    }
+
+    private void RotateCamera()
+    {
+        float mouseX = _controls.GetMouseX() * _rotationSpeed * _sensitivity;
+        float mouseY = _controls.GetMouseY() * _rotationSpeed * _sensitivity;
+
+        horizontalRotation += mouseX;
+        verticalRotation -= mouseY;
+        verticalRotation = Mathf.Clamp(verticalRotation, _verticalAngleMin, _verticalAngleMax);
+
+        currentVerticalRotation = Mathf.Lerp(currentVerticalRotation, verticalRotation, _cameraSmoothness);
+    }
+
+    private Vector3 CalculateCameraPosition()
+    {
+        Quaternion rotation = Quaternion.Euler(currentVerticalRotation, horizontalRotation, 0f);
+        Vector3 offset = new Vector3(0, _height, -currentDistance); // Usar currentDistance para interpolar
+        return _player.position + rotation * offset;
+    }
+
+
+
+    /*
+     * SCRIPT DE HOY ORIGINAL QUE TENIA MIO, AGREGAR MONOBEHAVIOUR
+     * 
+     * 
     public Transform player;
     public float distance = 4f; // Distancia normal
     public float aimDistance = 3f; // Distancia al apuntar
@@ -69,6 +165,12 @@ public class CameraFollow : MonoBehaviour
         Vector3 offset = new Vector3(0, height, -currentDistance); // Usar currentDistance para interpolar
         return player.position + rotation * offset;
     }
+
+    */
+
+
+
+
     /*
     public Transform player; // El transform del jugador al que sigue la cámara
 

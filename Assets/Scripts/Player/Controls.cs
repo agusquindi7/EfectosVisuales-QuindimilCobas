@@ -7,6 +7,8 @@ public class Controls
     Movement _movement;
     PlayerAttack _playerAttack;
 
+    private bool isAiming; //bool del script para que permita apuntar y no mover al pesonaje
+
     public Controls(Movement movement, PlayerAttack playerAttack) //para funcionar le pido un movement y el playerattack
     //public Controls(Movement movement) //para funcionar le pido un movement
     {
@@ -18,27 +20,51 @@ public class Controls
     {
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
+        var mouseX = Input.GetAxis("Mouse X");
+        var mouseY = Input.GetAxis("Mouse Y");
+
 
         if (horizontal != 0 || vertical != 0)
-        {
             _movement.Move(horizontal, vertical);
-        }
 
-        //public bool IsAiming()
-        if (Input.GetMouseButton(1)) //Solo al mantener presionado dispara //APUNTAR
+        if (mouseX != 0) //rota al jugador con el mouse en el eje X
+            _movement.Rotate(mouseX);
+
+
+        isAiming = Input.GetMouseButton(1); //la variale bool se activa solo al mantener el click derecho mouse
+       
+        if (isAiming)  //si es true permito disparar con el clic izquierdo o lanzarme
         {
-            // Si se mantiene el botón derecho, permitir disparar con el clic izquierdo
+            Debug.Log("apunta");
+            //if (Input.GetMouseButton(1)) //Solo al mantener presionado dispara //APUNTAR
+            //{                
             if (Input.GetMouseButtonDown(0)) //DISPARAR BALA
             {
                 _playerAttack.Shoot();
+                Debug.Log("DISPARA");
             }
-
             //public bool IsAttacking()
-            if (Input.GetKeyDown(KeyCode.Space)) //TIRARSE PROXIMAMENTE
+            if (Input.GetKeyDown(KeyCode.Space)) //TIRARSE: PROXIMAMENTE
             {
                 _movement.CanonBall();
+                Debug.Log("SE LANZA");
             }
+            //}
         }
-        //if (!Input.GetMouseButton(1))
     }
+
+    public bool IsAiming() //con esto le hago saber a otros scripts si la variable es T/F
+    {        
+        return isAiming;
+    }
+
+    public float GetMouseX() //devuelvo el getaxis x del mouse
+    {
+        return Input.GetAxis("Mouse X");
+    }
+    public float GetMouseY()
+    {
+        return Input.GetAxis("Mouse Y"); //devuelvo el getaxis y del mouse
+    }
+
 }
