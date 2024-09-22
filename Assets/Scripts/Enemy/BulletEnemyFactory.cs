@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletEnemyFactory
+public class BulletEnemyFactory : IBulletEnemyFactory
 {
     private GameObject bulletPrefab;
     private int maxBullets;
     private int currentBullets;
 
-    public BulletEnemyFactory(GameObject bulletPrefab, int maxBullets)
+    public BulletEnemyFactory(GameObject bulletPrefab)
     {
         this.bulletPrefab = bulletPrefab;
+    }
+
+    public void SetMaxBullets(int maxBullets)
+    {
         this.maxBullets = maxBullets;
         this.currentBullets = 0;
     }
@@ -25,7 +29,17 @@ public class BulletEnemyFactory
         }
         else
         {
-            return null; // O manejar de otra manera cuando se alcanza el límite
+            return null;
         }
+    }
+
+    public void ActivateBullet(EnemyBullet bullet)
+    {
+        bullet.gameObject.SetActive(true);
+    }
+
+    public void DeactivateBullet(EnemyBullet bullet)
+    {
+        bullet.gameObject.SetActive(false);
     }
 }

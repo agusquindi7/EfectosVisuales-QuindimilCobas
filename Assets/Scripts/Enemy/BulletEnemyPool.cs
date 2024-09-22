@@ -3,22 +3,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletEnemyPool
+public class BulletEnemyPool : MonoBehaviour, IBulletEnemyPool
 {
-    private readonly Stack<EnemyBullet> objects;
-    private readonly Func<EnemyBullet> createFunc;
-    private readonly Action<EnemyBullet> turnOnAction;
-    private readonly Action<EnemyBullet> turnOffAction;
+    [SerializeField]
+    private int maxBullets = 20;
 
-    public BulletEnemyPool(Func<EnemyBullet> createFunc, Action<EnemyBullet> turnOnAction, Action<EnemyBullet> turnOffAction, int initialCapacity)
+    private readonly Stack<EnemyBullet> objects = new Stack<EnemyBullet>();
+    private IBulletEnemyFactory factory;
+
+    public void Initialize(IBulletEnemyFactory factory)
     {
-        this.createFunc = createFunc;
-        this.turnOnAction = turnOnAction;
-        this.turnOffAction = turnOffAction;
-        objects = new Stack<EnemyBullet>(initialCapacity);
-        for (int i = 0; i < initialCapacity; i++)
+        this.factory = factory;
+        factory.SetMaxBullets(maxBullets);
+
+        for (int i = 0; i < maxBullets; i++)
         {
-            objects.Push(createFunc());
+            EnemyBullet bullet = factory.CreateBullet();
+            if (bullet != null)
+            {
+                objects.Push(bullet);
+                factory.DeactivateBullet(bullet);
+            }
+            else
+            {
+            }
         }
     }
 
@@ -26,21 +34,24 @@ public class BulletEnemyPool
     {
         if (objects.Count > 0)
         {
-            EnemyBullet obj = objects.Pop();
-            turnOnAction(obj);
-            return obj;
+            EnemyBullet bullet = objects.Pop();
+            factory.ActivateBullet(bullet);
+            return bullet;
         }
         else
         {
-            EnemyBullet obj = createFunc();
-            turnOnAction(obj);
-            return obj;
+            EnemyBullet bullet = factory.CreateBullet();
+            if (bullet != null)
+            {
+                factory.ActivateBullet(bullet);
+            }
+            return bullet;
         }
     }
 
-    public void Return(EnemyBullet obj)
+    public void Return(EnemyBullet bullet)
     {
-        turnOffAction(obj);
-        objects.Push(obj);
+        factory.DeactivateBullet(bullet);
+        objects.Push(bullet);
     }
 }

@@ -6,28 +6,85 @@ public class EnemyShooting : MonoBehaviour, IEnemyShooting
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public int maxBullets = 20; // Máximo número de balas que la fábrica puede crear
-    public float bulletLifetime = 5f; // Tiempo de vida de las balas
+    public float bulletLifetime = 5f;
+    public float shootInterval = 1f;
+    public int maxAmmo = 10;
+    public float reloadTime = 5f;
 
-    private BulletEnemyPool bulletPool;
-    private BulletEnemyFactory bulletFactory;
+    private IBulletEnemyPool bulletPool;
+    private IBulletEnemyFactory bulletFactory;
+    private EnemyDetection enemyDetection;
+    private float shootTimer;
+    private int currentAmmo;
+    private bool isReloading = false;
 
     void Start()
+    {        
+        bulletFactory = new BulletEnemyFactory(bulletPrefab);
+        
+        bulletPool = gameObject.AddComponent<BulletEnemyPool>();
+        ((BulletEnemyPool)bulletPool).Initialize(bulletFactory);
+            
+        enemyDetection = GetComponent<EnemyDetection>();
+
+        if (enemyDetection == null)
+        {
+        }
+        shootTimer = shootInterval;
+        currentAmmo = maxAmmo;
+    }
+
+    void Update()
     {
-        bulletFactory = new BulletEnemyFactory(bulletPrefab, maxBullets);
-        bulletPool = new BulletEnemyPool(bulletFactory.CreateBullet, EnemyBullet.TurnOn, EnemyBullet.TurnOff, maxBullets);
+        if (isReloading)
+            return;
+
+        if (enemyDetection != null && enemyDetection.IsPlayerInRange)
+        {
+            shootTimer -= Time.deltaTime;
+            if (shootTimer <= 0)
+            {
+                Shoot();
+                shootTimer = shootInterval;
+            }
+        }
+        else
+        {
+            shootTimer = shootInterval;
+        }
     }
 
     public void Shoot()
     {
-        EnemyBullet bullet = bulletPool.Get();
-        if (bullet != null)
+        if (currentAmmo > 0)
         {
-            bullet.transform.position = firePoint.position;
-            bullet.transform.rotation = firePoint.rotation;
-            bullet.gameObject.SetActive(true);
-            StartCoroutine(DeactivateBulletAfterTime(bullet, bulletLifetime));
+            EnemyBullet bullet = bulletPool.Get();
+            if (bullet != null)
+            {
+                bullet.transform.position = firePoint.position;
+                bullet.transform.rotation = firePoint.rotation;
+                StartCoroutine(DeactivateBulletAfterTime(bullet, bulletLifetime));
+                currentAmmo--;
+            }
+            else
+            {
+            }
         }
+
+        if (currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+        }
+    }
+
+    private IEnumerator Reload()
+    {
+        isReloading = true;
+
+        yield return new WaitForSeconds(reloadTime);
+
+        currentAmmo = maxAmmo;
+        isReloading = false;
     }
 
     private IEnumerator DeactivateBulletAfterTime(EnemyBullet bullet, float time)
