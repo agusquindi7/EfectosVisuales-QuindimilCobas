@@ -39,6 +39,9 @@ public class Player : MonoBehaviour
     public float cameraVerticalAngleMin = -10f;
     public float cameraVerticalAngleMax = 60f;
 
+
+    [SerializeField] bool _activeThisCamera;
+
     public MonoBehaviour monoBehaviour;
 
     void Awake()
@@ -71,10 +74,14 @@ public class Player : MonoBehaviour
     
     void LateUpdate()
     {
+        if (!_activeThisCamera)
+        {
         _cameraFollow.LateUpdate();
 
         //se sincroniza la rotación del personaje con la cámara
         float cameraRotation = _cameraFollow.GetHorizontalRotation();
         _movement.Rotate(cameraRotation);
+
+        }
     }
 }
