@@ -30937,7 +30937,6 @@ GameObject:
   - component: {fileID: 638462677}
   - component: {fileID: 638462676}
   - component: {fileID: 638462675}
-  - component: {fileID: 638462674}
   m_Layer: 0
   m_Name: ObjectiveLight
   m_TagString: Untagged
@@ -30945,18 +30944,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &638462674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638462673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc87dea486d1b8419683516ae86071b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &638462675
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31664,7 +31651,6 @@ GameObject:
   - component: {fileID: 855395474}
   - component: {fileID: 855395473}
   - component: {fileID: 855395472}
-  - component: {fileID: 855395471}
   m_Layer: 0
   m_Name: ObjectiveLight (1)
   m_TagString: Untagged
@@ -31672,18 +31658,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &855395471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855395470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc87dea486d1b8419683516ae86071b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &855395472
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31824,7 +31798,6 @@ GameObject:
   - component: {fileID: 943234340}
   - component: {fileID: 943234339}
   - component: {fileID: 943234338}
-  - component: {fileID: 943234337}
   m_Layer: 0
   m_Name: ObjectiveLight (2)
   m_TagString: Untagged
@@ -31832,18 +31805,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &943234337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943234336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcc87dea486d1b8419683516ae86071b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &943234338
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32004,7 +31965,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194231}
   - component: {fileID: 963194232}
   m_Layer: 0
   m_Name: Main Camera
@@ -32131,27 +32091,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &963194231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eaac239398bdde40b53068a258ef238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 303970775}
-  distance: 14
-  aimDistance: 3
-  height: 2
-  rotationSpeed: 3
-  sensitivity: 1
-  cameraSmoothness: 0.1
-  verticalAngleMin: -10
-  verticalAngleMax: 60
 --- !u!82 &963194232
 AudioSource:
   m_ObjectHideFlags: 0
