@@ -34,7 +34,7 @@ public class PlayerAttack
         }
     }
 
-    //public void ReloadCooldown(float deltaTime)
+    //public void ReloadCooldown(float deltaTime) //el time se lo puede pasar el Player o puedo usar el mismo de este script, da lo mismo
     public void ReloadCooldown()
     {
         if (_cdShootReload < _cdShoot)
