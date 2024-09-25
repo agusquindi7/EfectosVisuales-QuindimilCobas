@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using TMPro;
-
 public class UIManager : MonoBehaviour , IObserver
 {
-    public TextMeshProUGUI text;
+    public GameObject text;
     IObservable _obs;
 
     private void Start()
@@ -20,12 +18,11 @@ public class UIManager : MonoBehaviour , IObserver
     {
         if (isOnButton) 
         {
-            text.text = "Themal Key fully fixed";
-            text.enabled = true;
+            text.SetActive (true);
         }
         else
         {
-            text.enabled = false;
+            text.SetActive(false);
         }
     }
 
