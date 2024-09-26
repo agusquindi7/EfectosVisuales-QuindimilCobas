@@ -2,55 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack
 {
-    //haciendo esto de evitar la clase PlayerAim, evito pedir 2 clases a este script y hago que dependa de controles nomas. Pero todavia no respeta SOLID del todo
+    float _cdShoot;
+    float _cdShootReload;
+    int _ammo;
+    Transform _bulletSpawner;    
+    public Factory<Bullet> factory;
 
-    public float cd = 1.0f; //tiempo de recarga maxima
-    private float cdReload = 0f;
-    [SerializeField] private int _ammo = 3;
-
-    private Controls playerInput;
-    //public Bullet playerBullet;
-    //public BulletFactory factory; //aca estoy rompiendo Solid, dependo del padre
-    public Factory<Bullet> factory; //aca estoy dependiendo de una abstraccion, y le cargue el tipo de generic que quiero
-
-    void Start()
+    public PlayerAttack(float cdShoot, float cdShootReload, Transform bulletSpawner, int ammo, Factory<Bullet> bulletFactory)
     {
-        playerInput = GetComponent<Controls>();
+        _cdShoot = cdShoot;
+        _cdShootReload = cdShootReload;
+        _bulletSpawner = bulletSpawner;
+        _ammo = ammo;
+        factory = bulletFactory; 
     }
-
-    void Update()
+    
+    public void Shoot()
     {
-
         if (_ammo <= 0) return;
-
-        else if (playerInput.IsAiming() && playerInput.IsAttacking() && cdReload >= cd)
+         
+        else if (_ammo > 0 && _cdShootReload >= _cdShoot)
         {
+            var s = factory.Create(); //creo la bala con la factory
+            s.transform.position = _bulletSpawner.position;
+            s.transform.rotation = _bulletSpawner.rotation;
+
             _ammo--;
-            Shoot();
-            //Debug.Log("cd:  " + cdReload);
-        }
-
-        else if (cdReload < cd)
-        {
-            cdReload += Time.deltaTime;
+            _cdShootReload = 0;
         }
     }
 
-    private void Shoot()
+    //public void ReloadCooldown(float deltaTime) //el time se lo puede pasar el Player o puedo usar el mismo de este script, da lo mismo
+    public void ReloadCooldown()
     {
-        cdReload = 0;
-        Debug.Log("dispara!");
-
-        //Instantiate(playerBullet, transform.position, transform.rotation);
-        var s = factory.Create();
-        s.transform.position = transform.position;
-        s.transform.forward = transform.forward;
+        if (_cdShootReload < _cdShoot)
+            _cdShootReload += Time.deltaTime;
     }
-
-
-
+    
     //public float cd = 1f; //tiempo de recarga maxima
     //private float cdReaload = 0f;
 

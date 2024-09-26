@@ -12,7 +12,7 @@ public abstract class Entities : MonoBehaviour
         life = maxLife;
     }
 
-    public void LifeController(float damage)
+    public void TakeDamage(float damage)
     {
         if (life > maxLife) life = maxLife;
 

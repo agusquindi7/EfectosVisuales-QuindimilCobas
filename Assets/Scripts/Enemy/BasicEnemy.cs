@@ -6,10 +6,12 @@ using UnityEngine;
 public class BasicEnemy : Enemy
 {
     private IEnemyDetection enemyDetection;
+    private IEnemyShooting enemyShooting;
 
     void Start()
     {
         enemyDetection = GetComponent<IEnemyDetection>();
+        enemyShooting = GetComponent<IEnemyShooting>();
     }
 
     void Update()
@@ -33,5 +35,4 @@ public class BasicEnemy : Enemy
         Vector3 direction = (enemyDetection.Player.position - transform.position).normalized;
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
-
 }
