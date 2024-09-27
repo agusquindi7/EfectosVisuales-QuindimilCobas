@@ -7,46 +7,45 @@ public class Player : MonoBehaviour
     Controls _controls;
     PlayerAttack _playerAttack;
     Movement _movement;
-
     CameraFollow _cameraFollow;
-
+        
+    [Header("Player")] 
+    public MonoBehaviour monoBehaviour;
     [SerializeField] Rigidbody rb;
-
-    public Transform bulletSpawner;
-
     public float speed = 5f;
     public float forceJump = 3f;
 
+    [Header("Rotation")]
+    public float rotationSpeed = 10f;
+
+    [Header("Shoot")]
+    public Factory<Bullet> factory;
+    public Transform bulletSpawner;
     public float cdShoot = 1f;
     public float cdShootReload = 0f;
     public int ammo = 10;
-    public Factory<Bullet> factory;
 
-
+    [Header("Canonball")]
     public float launchForce = 10f;
-
-    [SerializeField] private Transform cameraTransform; // Aquí referencia a la cámara principal
-
-    public float rotationSpeed = 10f;
-
-    // Parámetros para la cámara
-    public float cameraDistance = 4f;
-    public float aimCameraDistance = 3f;
-    public float cameraHeight = 2f;
+    
+    [Header("Camera")]    
+    [SerializeField] private Camera camera; //referencia de la camara principal
+    public float mouseSensitivity = 100;
+    [Range(0f, 30f), SerializeField] float distance = 15f;
+    public float hitOffSet = 0.1f;
     public float cameraRotationSpeed = 4f;
-    public float cameraSensitivity = 1f;
-    public float cameraSmoothness = 0.1f;
-    public float cameraVerticalAngleMin = -10f;
-    public float cameraVerticalAngleMax = 60f;
+    //public bool isCameraBlocked;
+    //public Vector3 camPos;
+    //public Vector3 direction;
+    //public Ray ray;
 
-
-    [SerializeField] bool _activeThisCamera;
-
-    public MonoBehaviour monoBehaviour;
+    [SerializeField] bool _cancelThisCamera;
 
     void Awake()
     {
+        rotationSpeed = mouseSensitivity;
         cameraRotationSpeed = rotationSpeed;
+
         //si inicializo antes los controles hay problemas nulos, queres inicializar algo que no existe
         _playerAttack = new PlayerAttack(cdShoot, cdShootReload, bulletSpawner, ammo, factory);
         _movement = new Movement(transform, rb, speed, forceJump, rotationSpeed, launchForce); //monoBehaviour
@@ -55,33 +54,52 @@ public class Player : MonoBehaviour
         //entonces inicializo un metodo de controls luego de crear controls
         _movement.SetControls(_controls);
 
-        _cameraFollow = new CameraFollow(transform, cameraTransform, cameraDistance, aimCameraDistance, cameraHeight,
-                                         cameraRotationSpeed, cameraSensitivity, cameraSmoothness,
-                                         cameraVerticalAngleMin, cameraVerticalAngleMax, _controls);        
+        //_camerafollow = new camerafollow(transform, cameratransform, cameradistance, aimcameradistance, cameraheight,
+        //                                 camerarotationspeed, camerasensitivity, camerasmoothness,
+        //                                 cameraverticalanglemin, cameraverticalanglemax, _controls);        
+
+        //_camerafollow = new camerafollow(transform, camera, mousesensitivity,distance, hitoffset,
+        //    iscamerablocked, campos, direction, ray, _controls);
+
+        _cameraFollow = new CameraFollow(transform, camera, mouseSensitivity, distance, hitOffSet, _controls);
+
+    }
+
+    private void Start()
+    {
+        _cameraFollow.CameraStart();
+    }
+
+    private void FixedUpdate()
+    {
+        _cameraFollow.CameraFixedUpdate();
+    }
+
+    void LateUpdate()
+    {
+        if (!_cancelThisCamera)
+        {
+        _cameraFollow.CameraLateUpdate();
+
+        //se sincroniza la rotación del personaje con la cámara
+        //float cameraRotation = _cameraFollow.GetHorizontalRotation();
+        //_movement.Rotate(cameraRotation);
+
+        }
     }
 
     void Update()
     {
         _controls.ArtificialUpdate();
-        //_playerAttack.ReloadCooldown(Time.deltaTime);
         _playerAttack.ReloadCooldown();
 
         //esto es por si quiero actualizar valores de la camara
-        _cameraFollow.UpdateValues(cameraDistance, aimCameraDistance,
-            cameraHeight, cameraRotationSpeed, cameraSensitivity,
-            cameraSmoothness, cameraVerticalAngleMin, cameraVerticalAngleMax);
+        //_cameraFollow.UpdateValues(cameraDistance, aimCameraDistance,
+        //    cameraHeight, cameraRotationSpeed, cameraSensitivity,
+        //    cameraSmoothness, cameraVerticalAngleMin, cameraVerticalAngleMax);
     }
     
-    void LateUpdate()
-    {
-        if (!_activeThisCamera)
-        {
-        _cameraFollow.LateUpdate();
 
-        //se sincroniza la rotación del personaje con la cámara
-        float cameraRotation = _cameraFollow.GetHorizontalRotation();
-        _movement.Rotate(cameraRotation);
+    
 
-        }
-    }
 }

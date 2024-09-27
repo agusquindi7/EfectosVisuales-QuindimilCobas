@@ -36,13 +36,13 @@ public class BulletFactory : Factory<Bullet>
             return null;
         }
 
+
+
         //???
         var b = _pool.Get();
         b.Pool = _pool;
         return b;
         //return Instantiate(playerBullet);
         //return _pool.Get;
-
-
     }
 }

@@ -6,7 +6,7 @@ public abstract class Bullet : MonoBehaviour
 {
     //RequireComponent <BoxCollider>;
     [SerializeField] protected float _damage = 5f; //si fuera privada, nadie, ni sus hijos podrian acceder al daño
-    [SerializeField] protected float _speed = 10f; //protected es privda para todos menos para los que hereden
+    [SerializeField] protected float _speed = 10f; //protected es privada para todos menos para los que hereden
 
     
     //como se que todas las balas se van a poder reutilizar, hago una var publica
@@ -16,15 +16,7 @@ public abstract class Bullet : MonoBehaviour
         protected get; //todas las balas van a ser protected como privadas
         set; //pero si voy a poder modificarlo
     }
-
-    /*
-    private void Update()
-    {
-        transform.position += transform.forward * _speed * Time.deltaTime;
-        //Destroy(gameObject, 3);
-    }
-    */
-
+    
     public virtual void TurnOn()
     {
         gameObject.SetActive(true);
