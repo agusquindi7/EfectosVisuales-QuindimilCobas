@@ -3,96 +3,130 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow
-{
-    // Mantener el código tal cual
-    private Transform _player;
-    private Transform _camera;
-    private float _distance;
-    private float _aimDistance;
-    private float _height;
-    private float _rotationSpeed;
-    private float _sensitivity;
-    private float _cameraSmoothness;
-    private float _verticalAngleMin;
-    private float _verticalAngleMax;
-    private Controls _controls;
+{    
+    Controls _controls;
 
-    private float currentDistance;
-    private float horizontalRotation;
-    private float verticalRotation;
-    private float currentVerticalRotation;
+    Camera _camera;
+    float _mouseSensitivity;
+    float _distance;
+    float _hitOffSet;
 
-    public CameraFollow(Transform player, Transform camera, float distance,
-        float aimDistance, float height, float rotationSpeed, float sensitivity,
-        float cameraSmoothness, float verticalAngleMin, float verticalAngleMax, Controls controls)
+    Transform _player; //target
+
+    float _mouseX;
+    float _mouseY;
+
+    Vector3 _camPos;
+    Vector3 _direction;
+    Ray _ray;
+    RaycastHit _raycastHit;
+    bool _isCameraBlocked;
+    
+    //private float horizontalRotation;
+
+    public CameraFollow(Transform player, Camera camera, float mouseSensitivity,
+        float distance, float hitOffSet, Controls controls)
+
     {
         _player = player;
         _camera = camera;
+        _mouseSensitivity = mouseSensitivity;
         _distance = distance;
-        _aimDistance = aimDistance;
-        _height = height;
-        _rotationSpeed = rotationSpeed;
-        _sensitivity = sensitivity;
-        _cameraSmoothness = cameraSmoothness;
-        _verticalAngleMin = verticalAngleMin;
-        _verticalAngleMax = verticalAngleMax;
+        _hitOffSet = hitOffSet;
         _controls = controls;
 
-        currentDistance = distance;
-        horizontalRotation = camera.eulerAngles.y;
-        verticalRotation = camera.eulerAngles.x;
     }
 
-    //esto es por si quiero actualizar valores en el update de Player
-    public void UpdateValues(float distance, float aimDistance, float height,
-        float rotationSpeed, float sensitivity, float cameraSmoothness,
-        float verticalAngleMin, float verticalAngleMax)
+    public void CameraStart()
     {
-        _distance = distance;
-        _aimDistance = aimDistance;
-        _height = height;
-        _rotationSpeed = rotationSpeed;
-        _sensitivity = sensitivity;
-        _cameraSmoothness = cameraSmoothness;
-        _verticalAngleMin = verticalAngleMin;
-        _verticalAngleMax = verticalAngleMax;
-        currentDistance = distance;
+        Cursor.lockState = CursorLockMode.Locked;
+        _mouseX = _controls.GetMouseX();
+        _mouseY = _controls.GetMouseY();
+
     }
 
-    public float GetHorizontalRotation()
+    public void CameraFixedUpdate()
     {
-        return horizontalRotation;
+        _ray = new Ray(_player.transform.position, _direction);
+        _isCameraBlocked = Physics.SphereCast(_ray, 0.1f, out _raycastHit, _distance);
     }
 
-    public void LateUpdate()
+    public void CameraLateUpdate()
     {
-        RotateCamera();
+        _player.transform.position = _player.position;
 
-        Vector3 desiredPosition = CalculateCameraPosition();
-        _camera.position = Vector3.Lerp(_camera.position, desiredPosition, _cameraSmoothness);
+        #region Cam Movement
 
-        // La cámara mira al jugador
-        _camera.LookAt(_player.position + Vector3.up * _height);
+        //_mouseX += _controls.GetMouseX() * _mouseSensitivity * Time.deltaTime;
+        //_mouseY += _controls.GetMouseY() * _mouseSensitivity * Time.deltaTime;
+
+        _mouseX += Input.GetAxisRaw("Mouse X") * _mouseSensitivity * Time.deltaTime;
+        _mouseY += Input.GetAxisRaw("Mouse Y") * _mouseSensitivity * Time.deltaTime;
+
+        if (_mouseX >= 360 || _mouseX <= -360)
+        {
+            _mouseX -= 360 * Mathf.Sign(_mouseX);
+        }
+
+        _mouseY = Mathf.Clamp(_mouseY, -30f, 30f);
+
+        _player.transform.rotation = Quaternion.Euler(-_mouseY, _mouseX, 0f);
+
+        #endregion
+
+        #region Spring Arm
+
+        _direction = -_player.transform.forward;
+        if (_isCameraBlocked)
+            _camPos = _raycastHit.point - _direction * _hitOffSet;
+
+        else _camPos = _player.transform.position + _direction * _distance;
+
+        _camera.transform.position = _camPos;
+        _camera.transform.LookAt(_player.transform.position);
+
+        #endregion
+                   
     }
+    //public float GetHorizontalRotation()
+    //{
+    //    return horizontalRotation;
+    //}
 
-    private void RotateCamera()
+    #region GIZMOS
+
+    void OnDrawGizmos()
     {
-        float mouseX = _controls.GetMouseX() * _rotationSpeed * _sensitivity;
-        float mouseY = _controls.GetMouseY() * _rotationSpeed * _sensitivity;
+        var position = _player.transform.position;
 
-        horizontalRotation += mouseX;
-        verticalRotation -= mouseY;
-        verticalRotation = Mathf.Clamp(verticalRotation, _verticalAngleMin, _verticalAngleMax);
+        Gizmos.color = Color.blue;
 
-        currentVerticalRotation = Mathf.Lerp(currentVerticalRotation, verticalRotation, _cameraSmoothness);
+        Gizmos.DrawSphere(position, 0.1f);
+
+        Gizmos.DrawSphere(_camPos, 0.1f);
+
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawLine(position, _camPos);
     }
 
-    private Vector3 CalculateCameraPosition()
-    {
-        Quaternion rotation = Quaternion.Euler(currentVerticalRotation, horizontalRotation, 0f);
-        Vector3 offset = new Vector3(0, _height, -currentDistance); // Usar currentDistance para interpolar
-        return _player.position + rotation * offset;
-    }
+    #endregion
+     
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -232,6 +266,11 @@ public class CameraFollow
     }
     */
 
+
+
+
+
+
     /*
     public Transform player;        // Referencia al transform del jugador
     public float distance = 5.0f;   // Distancia entre la cámara y el jugador
@@ -274,6 +313,15 @@ public class CameraFollow
         transform.LookAt(player.position + Vector3.up * height);
     }
     */
+
+
+
+
+
+
+
+
+
 
     /*
     //asigno objetivo

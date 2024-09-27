@@ -9,8 +9,8 @@ public class Controls
 
     private bool isAiming; //bool del script para que permita apuntar y no mover al pesonaje
 
-    public Controls(Movement movement, PlayerAttack playerAttack) //para funcionar le pido un movement y el playerattack
-    //public Controls(Movement movement) //para funcionar le pido un movement
+    //para funcionar le pido un movement y el playerattack
+    public Controls(Movement movement, PlayerAttack playerAttack)
     {
         _movement = movement;
         _playerAttack = playerAttack;
@@ -18,10 +18,13 @@ public class Controls
 
     public void ArtificialUpdate() //SE REVIZAN LOS CONTROLES EN EL UPDATE DEL PLAYER
     {
-        var horizontal = Input.GetAxis("Horizontal");
-        var vertical = Input.GetAxis("Vertical");
-        var mouseX = Input.GetAxis("Mouse X");
-        var mouseY = Input.GetAxis("Mouse Y");
+        var horizontal = Input.GetAxisRaw("Horizontal");
+        var vertical = Input.GetAxisRaw("Vertical");
+        var mouseX = Input.GetAxisRaw("Mouse X");
+        var mouseY = Input.GetAxisRaw("Mouse Y");
+
+
+        //PODRIA METER ACA EL if (!isAiming?) y me ahorro de pasarlo por script el bool porque hago el chequeo aca o queda mal?
 
 
         if (horizontal != 0 || vertical != 0)
@@ -58,13 +61,13 @@ public class Controls
         return isAiming;
     }
 
-    public float GetMouseX() //devuelvo el getaxis x del mouse
+    public float GetMouseX() //devuelvo el getaxisraw x del mouse
     {
-        return Input.GetAxis("Mouse X");
+        return Input.GetAxisRaw("Mouse X");
     }
-    public float GetMouseY()
+    public float GetMouseY() //devuelvo el getaxisrwaw y del mouse
     {
-        return Input.GetAxis("Mouse Y"); //devuelvo el getaxis y del mouse
+        return Input.GetAxisRaw("Mouse Y"); 
     }
 
 }

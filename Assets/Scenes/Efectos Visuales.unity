@@ -1419,7 +1419,7 @@ Transform:
   m_GameObject: {fileID: 303970771}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.99, y: 4.02, z: -11.41}
+  m_LocalPosition: {x: 15.379, y: 4.02, z: -10.569}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1491,27 +1491,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51dcd0f73ab4feb4b8a116ccc7732bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monoBehaviour: {fileID: 303970782}
   rb: {fileID: 303970781}
-  bulletSpawner: {fileID: 2118342534}
   speed: 7
   forceJump: 10
+  rotationSpeed: 10
+  factory: {fileID: 153363101}
+  bulletSpawner: {fileID: 2118342534}
   cdShoot: 0.2
   cdShootReload: 0
   ammo: 100
-  factory: {fileID: 153363101}
   launchForce: 300
-  cameraTransform: {fileID: 963194228}
-  rotationSpeed: 10
-  cameraDistance: 8
-  aimCameraDistance: 2
-  cameraHeight: 4
+  camera: {fileID: 963194227}
+  mouseSensitivity: 100
+  distance: 10
+  hitOffSet: 0.1
   cameraRotationSpeed: 10
-  cameraSensitivity: 0.5
-  cameraSmoothness: 0.1
-  cameraVerticalAngleMin: -10
-  cameraVerticalAngleMax: 60
-  _activeThisCamera: 0
-  monoBehaviour: {fileID: 303970782}
+  _cancelThisCamera: 0
 --- !u!114 &303970783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1519,7 +1515,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 303970771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aadf14999414d9c41a1b063e3d61c63a, type: 3}
   m_Name: 
