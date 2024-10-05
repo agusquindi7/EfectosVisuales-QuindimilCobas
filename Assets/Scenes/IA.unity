@@ -123,51 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &23933165
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 23933166}
-  - component: {fileID: 23933167}
-  m_Layer: 0
-  m_Name: SingletonFloor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &23933166
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23933165}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &23933167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23933165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87870cba02c12e047a9f6a022bb576d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myRBs: []
 --- !u!1 &75959900
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +391,7 @@ GameObject:
   - component: {fileID: 1151652161}
   - component: {fileID: 1151652160}
   - component: {fileID: 1151652159}
+  - component: {fileID: 1151652164}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -556,6 +512,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151652164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151652158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662adaa003a2cc5448821a63eeedcb31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2143099808
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,4 +638,3 @@ SceneRoots:
   - {fileID: 75959902}
   - {fileID: 2143099812}
   - {fileID: 1151652163}
-  - {fileID: 23933166}

@@ -1096,8 +1096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc1507141cdc8a4c8b8c2ce840056f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  cameraTransform: {fileID: 963194228}
 --- !u!114 &303970778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,9 +1134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fa91a2f9ce27c46802d6c388b94ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cd: 1
-  _ammo: 10
-  factory: {fileID: 0}
 --- !u!54 &303970781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -35521,9 +35516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fa91a2f9ce27c46802d6c388b94ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cd: 1
-  _ammo: 10
-  factory: {fileID: 302904308}
 --- !u!114 &741824788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35548,8 +35540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc1507141cdc8a4c8b8c2ce840056f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  cameraTransform: {fileID: 963194228}
 --- !u!114 &741824790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36066,14 +36056,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaac239398bdde40b53068a258ef238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 741824794}
-  distance: 4
-  height: 2
-  rotationSpeed: 3
-  sensitivity: 1
-  cameraSmoothness: 0.1
-  verticalAngleMin: -10
-  verticalAngleMax: 60
 --- !u!1 &971784402
 GameObject:
   m_ObjectHideFlags: 0
