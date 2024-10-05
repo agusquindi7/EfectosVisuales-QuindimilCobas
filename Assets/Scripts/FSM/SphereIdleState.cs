@@ -4,18 +4,19 @@ public class SphereIdleState : SphereBaseState
 {
     public override void Awake(SphereStateManager sphere)
     {
-        Debug.Log("Hello from the IDLE STATE!\nPRESS SPACE BUTTON TO ATTACK");
+        Debug.Log("A mimir asies... Z Z Z Z Z Z Z Z Z Z");
     }
 
     public override void Execute(SphereStateManager sphere)
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (sphere.energy < 5)
         {
-            sphere.SwitchState(sphere.attackingState);
+            sphere.energy += Time.deltaTime;
+            Debug.Log(sphere.energy);
         }
-        else if(Input.GetKeyDown(KeyCode.D))
+        else
         {
-            sphere.SwitchState(sphere.deathState);
+            sphere.SwitchState(sphere.patrolState);
         }
     }
 
