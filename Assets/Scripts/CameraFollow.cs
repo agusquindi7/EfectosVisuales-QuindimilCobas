@@ -68,7 +68,7 @@ public class CameraFollow
             _mouseX -= 360 * Mathf.Sign(_mouseX);
         }
 
-        _mouseY = Mathf.Clamp(_mouseY, -30f, 30f);
+        _mouseY = Mathf.Clamp(_mouseY, -89f, 30f);
 
         _player.transform.rotation = Quaternion.Euler(-_mouseY, _mouseX, 0f);
 
