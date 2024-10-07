@@ -9,18 +9,31 @@ public class SphereStateManager : MonoBehaviour
     public SpherePatrolState patrolState = new SpherePatrolState();
     public SphereChaseState chaseState = new SphereChaseState();
     //PatrolStateVariables
-    public float energy = 0;
+    public float energy, maxEnergy = 10f;
     public int currentWaypointIndex = 0;
     public float speed = 5;
     public Transform[] waypoints;
     //ChaseStateVariables
     public float radius = 4f;
+    public Transform target;
+    public float maxSpeed;
+    private ISteering steering;
 
     private void Start()
     {
+        energy = maxEnergy;
+
         currentState = idleState;
 
         currentState.Awake(this);
+
+        steering = new PursuitSteering(maxSpeed, radius, 1);
+    }
+
+    public void Pursuit()
+    {
+        Debug.Log("Siguiendo");
+        transform.position += steering.GetDir(transform.position, target.position);
     }
 
     private void Update()

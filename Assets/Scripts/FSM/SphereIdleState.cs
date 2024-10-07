@@ -9,7 +9,7 @@ public class SphereIdleState : SphereBaseState
 
     public override void Execute(SphereStateManager sphere)
     {
-        if (sphere.energy < 5)
+        if (sphere.energy < sphere.maxEnergy)
         {
             sphere.energy += Time.deltaTime;
             Debug.Log(sphere.energy);

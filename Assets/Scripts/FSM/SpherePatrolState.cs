@@ -30,9 +30,19 @@ public class SpherePatrolState : SphereBaseState
 
             sphere.energy -= Time.deltaTime;
         }
-        else
+        else if(sphere.energy<=0)
         {
             sphere.SwitchState(sphere.idleState);
+        }
+        //Chequeo si estoy dentro del rango de chase
+        Collider[] colliders = Physics.OverlapSphere(sphere.transform.position, sphere.radius);
+        foreach (Collider collider in colliders)
+        {
+            Debug.Log(collider.name);
+            if (collider.GetComponent<PlayerLife>() && Vector3.Distance(collider.transform.position, sphere.transform.position) < sphere.radius)
+            {
+                sphere.SwitchState(sphere.chaseState);
+            }
         }
     }
 

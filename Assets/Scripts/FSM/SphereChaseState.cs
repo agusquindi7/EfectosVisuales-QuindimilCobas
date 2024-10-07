@@ -6,16 +6,25 @@ public class SphereChaseState : SphereBaseState
 {
     public override void Awake(SphereStateManager sphere)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("OS VOY A ROMPER A PEDAZOOOS!");
     }
 
     public override void Execute(SphereStateManager sphere)
     {
-        throw new System.NotImplementedException();
+        sphere.Pursuit();
+        Collider[] colliders = Physics.OverlapSphere(sphere.transform.position, sphere.radius);
+        foreach (Collider collider in colliders)
+        {
+            Debug.Log(collider.name);
+            if (collider.GetComponent<PlayerLife>() && Vector3.Distance(collider.transform.position, sphere.transform.position) > sphere.radius)
+            {
+                sphere.SwitchState(sphere.patrolState);
+            }
+        }
     }
 
     public override void Sleep(SphereStateManager sphere)
     {
-        throw new System.NotImplementedException();
+        Debug.Log("onde ta? ;(");
     }
 }
