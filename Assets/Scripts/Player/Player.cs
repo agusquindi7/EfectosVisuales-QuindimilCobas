@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 
     [Header("Rotation")]
     public float rotationSpeed = 10f;
+    
+    //AGREGADO
+    public Transform rotationYCam;
 
     [Header("Shoot")]
     public Factory<Bullet> factory;
@@ -61,7 +64,7 @@ public class Player : MonoBehaviour
         //_camerafollow = new camerafollow(transform, camera, mousesensitivity,distance, hitoffset,
         //    iscamerablocked, campos, direction, ray, _controls);
 
-        _cameraFollow = new CameraFollow(transform, camera, mouseSensitivity, distance, hitOffSet, _controls);
+        _cameraFollow = new CameraFollow(transform, camera, mouseSensitivity, distance, hitOffSet, _controls, rotationYCam);
 
     }
 
@@ -98,8 +101,12 @@ public class Player : MonoBehaviour
         //    cameraHeight, cameraRotationSpeed, cameraSensitivity,
         //    cameraSmoothness, cameraVerticalAngleMin, cameraVerticalAngleMax);
     }
-    
 
+    private void OnDrawGizmos()
+    {
+#if !UNITYEDITOR
+        _cameraFollow.OnDrawGizmoscam();
+#endif
+    }
     
-
 }

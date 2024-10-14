@@ -21,11 +21,12 @@ public class CameraFollow
     Ray _ray;
     RaycastHit _raycastHit;
     bool _isCameraBlocked;
-    
+    Transform _rotationYCam;
+
     //private float horizontalRotation;
 
     public CameraFollow(Transform player, Camera camera, float mouseSensitivity,
-        float distance, float hitOffSet, Controls controls)
+        float distance, float hitOffSet, Controls controls, Transform rotationYCam)
 
     {
         _player = player;
@@ -34,6 +35,9 @@ public class CameraFollow
         _distance = distance;
         _hitOffSet = hitOffSet;
         _controls = controls;
+
+        //AGREGADO
+        _rotationYCam = rotationYCam;
 
     }
 
@@ -55,13 +59,16 @@ public class CameraFollow
     {
         _player.transform.position = _player.position;
 
+        //AGREGADO
+        _rotationYCam.transform.position = _rotationYCam.position;
+
         #region Cam Movement
 
-        //_mouseX += _controls.GetMouseX() * _mouseSensitivity * Time.deltaTime;
-        //_mouseY += _controls.GetMouseY() * _mouseSensitivity * Time.deltaTime;
+        _mouseX += _controls.GetMouseX() * _mouseSensitivity * Time.deltaTime;
+        _mouseY += _controls.GetMouseY() * _mouseSensitivity * Time.deltaTime;
 
-        _mouseX += Input.GetAxisRaw("Mouse X") * _mouseSensitivity * Time.deltaTime;
-        _mouseY += Input.GetAxisRaw("Mouse Y") * _mouseSensitivity * Time.deltaTime;
+        //_mouseX += Input.GetAxisRaw("Mouse X") * _mouseSensitivity * Time.deltaTime;
+        //_mouseY += Input.GetAxisRaw("Mouse Y") * _mouseSensitivity * Time.deltaTime;
 
         if (_mouseX >= 360 || _mouseX <= -360)
         {
@@ -70,23 +77,46 @@ public class CameraFollow
 
         _mouseY = Mathf.Clamp(_mouseY, -89f, 30f);
 
-        _player.transform.rotation = Quaternion.Euler(-_mouseY, _mouseX, 0f);
+        //ORIGINAL
+        //_player.transform.rotation = Quaternion.Euler(-_mouseY, _mouseX, 0f);
 
+        //MODIFICADO
+        _player.transform.rotation = Quaternion.Euler(0, _mouseX, 0f);
+
+        //AGREGADO
+        _rotationYCam.transform.rotation = Quaternion.Euler(-_mouseY, _mouseX, _rotationYCam.transform.rotation.z);
+        //_rotationYCam.transform.localRotation = Quaternion.Euler(-_mouseY, _mouseX, 0f);
+        
         #endregion
+
 
         #region Spring Arm
 
-        _direction = -_player.transform.forward;
+        //ORIGINAL
+        //_direction = -_player.transform.forward;
+        //if (_isCameraBlocked)
+        //    _camPos = _raycastHit.point - _direction * _hitOffSet;
+
+        //else _camPos = _player.transform.position + _direction * _distance;
+
+        _direction = -_rotationYCam.transform.forward;
+
         if (_isCameraBlocked)
             _camPos = _raycastHit.point - _direction * _hitOffSet;
 
-        else _camPos = _player.transform.position + _direction * _distance;
+        else _camPos = _rotationYCam.transform.position + _direction * _distance;
 
+        //distancia camara-jugador y sigue al jugador
         _camera.transform.position = _camPos;
-        _camera.transform.LookAt(_player.transform.position);
+
+        //ORIGINAL
+        //_camera.transform.LookAt(_player.transform.position);
+
+        //MODIFICADO LOOK AT ROTA A LA CAMARA EN SU PROPIO EJE
+        _camera.transform.LookAt(_rotationYCam.transform.position);
 
         #endregion
-                   
+
     }
     //public float GetHorizontalRotation()
     //{
@@ -95,7 +125,7 @@ public class CameraFollow
 
     #region GIZMOS
 
-    void OnDrawGizmos()
+    public void OnDrawGizmoscam()
     {
         var position = _player.transform.position;
 
