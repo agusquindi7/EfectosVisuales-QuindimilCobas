@@ -1929,7 +1929,7 @@ Rigidbody:
   m_GameObject: {fileID: 303970771}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -1961,21 +1961,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monoBehaviour: {fileID: 303970782}
   rb: {fileID: 303970781}
-  speed: 7
-  forceJump: 10
+  speed: 10
   rotationSpeed: 10
-  rotationYCam: {fileID: 214742356}
   factory: {fileID: 153363101}
   bulletSpawner: {fileID: 2118342534}
   cdShoot: 0.2
   cdShootReload: 0
   ammo: 100
-  launchForce: 300
+  launchForce: 50
   camera: {fileID: 963194227}
   mouseSensitivity: 100
   distance: 17
   hitOffSet: 0.1
   cameraRotationSpeed: 10
+  rotationYCam: {fileID: 214742356}
   _cancelThisCamera: 0
 --- !u!114 &303970784
 MonoBehaviour:
@@ -32975,7 +32974,6 @@ GameObject:
   - component: {fileID: 1007354910}
   - component: {fileID: 1007354913}
   - component: {fileID: 1007354912}
-  - component: {fileID: 1007354911}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -32998,27 +32996,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 214742356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1007354911
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007354909}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1007354912
 MeshRenderer:
   m_ObjectHideFlags: 0

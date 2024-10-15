@@ -12,24 +12,32 @@ public class Movement
     float _rotationSpeed;
     float _launchForce;
     private Controls _controls;
+    private Transform _bulletSpawner;
 
     //MonoBehaviour _monoBehaviour;
     //public bool isAiming;
 
     //al no heredar de monobehabiour se lo pido todo a player en el constructor
     public Movement(Transform transform, Rigidbody rb, float speed,
-        float forcejump, float rotationSpeed,float launchForce)
+        float rotationSpeed, Transform bulletSpawner, float launchForce)
     //bool canMove, MonoBehaviour monoBehaviour          al no heredar de monobehaviour se lo pido a player
     {
         _transform = transform;
         _rb = rb;
         _speed = speed;
-        _forceJump = forcejump;
         _rotationSpeed = rotationSpeed;
+        _bulletSpawner = bulletSpawner;
+        _launchForce = launchForce;
 
         //_canMove = canMove; //con la interfaz de ICanMove?
         //_controls = controls;
         //_monoBehaviour = monoBehaviour;
+    }
+
+    public void UpdateCannonValues(float speed, float launchForce)
+    {
+        _speed = speed;
+        _launchForce = launchForce;
     }
 
     //el constructor con los paramentros se inicializa antes, por eso lo pongo en un script aparte
@@ -39,10 +47,14 @@ public class Movement
         _controls = controls;
     }
 
+
+
     //public bool CanMove()
     //{
     //    if (isAiming) return isAiming;
     //}
+
+
 
     public void Move(float horizontal, float vertical)
     {
@@ -55,14 +67,11 @@ public class Movement
         }        
     }
 
-    //public void Rotate(float mouseX)
-    //{
-    //    if (_controls.IsAiming()) //rotación en el eje Y del jugador
-    //        _transform.Rotate(Vector3.up * mouseX * _rotationSpeed * Time.deltaTime);        
-    //}
+
 
     //PROBLEMA DE ROTACION
     //no se si es por lerp o por late update, al rotar a veces tarda un poco o vibra    
+
     public void Rotate(float cameraRotation)
     {
         //sincronizo la rotacion del jugador con la rotacion horizontal de la cámara
@@ -70,17 +79,22 @@ public class Movement
         _transform.rotation = Quaternion.Slerp(_transform.rotation, targetRotation, Time.deltaTime * _rotationSpeed);
     }
 
+
+
     public void CanonBall()
     {
         //salto normal, se cambia a futuro como una pelota de golf
-        _rb.AddForce(Vector3.up * _forceJump, ForceMode.Impulse);
+        //_rb.AddForce(Vector3.up * _launchForce, ForceMode.Impulse);
+
+        Vector3 direction = _bulletSpawner.forward; // Usa el vector forward del spawner para la dirección
+        _rb.AddForce(direction * _launchForce, ForceMode.Impulse);
 
         //if (_monoBehaviour == null)
         //{
         //    Debug.LogError("no tiene monobehaviour");
         //    return;
         //}        
-        
+
         //// Calcular la dirección de lanzamiento
         //Vector3 launchDirection = Camera.main.transform.forward;
         //launchDirection.y = 0; // Elimina la componente vertical
