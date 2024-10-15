@@ -38,10 +38,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _AngleDistortion: 180
-    - _AngleSpeed: 4
-    - _CellsAmount: 4
-    - _ScreenBorderAmount: -0.1
+    - _AngleSpeed: 12
+    - _CellsAmount: 7.92
+    - _ScreenBorderAmount: 0.2
     - _speed: 0
     m_Colors:
     - _Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
+    - _SpheriseStregth: {r: 0.3, g: 0.3, b: 0, a: 0}
   m_BuildTextureStacks: []
