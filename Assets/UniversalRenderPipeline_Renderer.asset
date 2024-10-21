@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: CRT Effect
   m_EditorClassIdentifier: 
   m_Active: 1
-  passMaterial: {fileID: -876546973899608171, guid: 37652d0270f5b3144876b278a685a951, type: 3}
+  passMaterial: {fileID: 2100000, guid: 44cc7eddab699914ba062ddeaa3125ab, type: 2}
   injectionPoint: 600
   requirements: 4
   passIndex: 0
