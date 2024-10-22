@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     PlayerAttack _playerAttack;
     Movement _movement;
     CameraFollow _cameraFollow;
+    AIM _aim;
 
     [Header("Player")]
     public MonoBehaviour monoBehaviour;
@@ -17,7 +18,6 @@ public class Player : MonoBehaviour
 
     [Header("Rotation")]
     public float rotationSpeed = 10f;
-
 
     [Header("Shoot")]
     public Factory<Bullet> factory;
@@ -41,6 +41,11 @@ public class Player : MonoBehaviour
 
     [SerializeField] bool _cancelThisCamera;
 
+
+    [Header("MATERIAL AIM")]
+    public Material aimShadowsMat; //material
+    public string borderFloatRef; //nombre de la referencia
+
     void Awake()
     {
         rotationSpeed = mouseSensitivity;
@@ -49,10 +54,15 @@ public class Player : MonoBehaviour
         //si inicializo antes los controles hay problemas nulos, queres inicializar algo que no existe
         _playerAttack = new PlayerAttack(cdShoot, cdShootReload, bulletSpawner, ammo, factory);
         _movement = new Movement(transform, rb, speed, rotationSpeed, bulletSpawner, launchForce); //monoBehaviour
+
+        _aim = new AIM(aimShadowsMat, borderFloatRef);
+
         _controls = new Controls(_movement, _playerAttack);
 
         //entonces inicializo un metodo de controls luego de crear controls
         _movement.SetControls(_controls);
+
+        _aim.SetControls(_controls);
 
         //_camerafollow = new camerafollow(transform, cameratransform, cameradistance, aimcameradistance, cameraheight,
         //                                 camerarotationspeed, camerasensitivity, camerasmoothness,
@@ -94,6 +104,8 @@ public class Player : MonoBehaviour
         _playerAttack.ReloadCooldown();
 
         _movement.UpdateCannonValues(speed, launchForce);
+
+        _aim.UpdateAim();
 
         //esto es por si quiero actualizar valores de la camara
         //_cameraFollow.UpdateValues(cameraDistance, aimCameraDistance,

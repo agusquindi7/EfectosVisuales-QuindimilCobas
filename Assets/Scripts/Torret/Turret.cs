@@ -2,14 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Torret : MonoBehaviour
+public class Turret : MonoBehaviour
 {
+    //TurretAttack _turretAttack;
+    
+        
+    public TurretAttack turretAttack;
+
     public Transform target;
     private bool isTracking = false;
 
-    public Transform raycastOrigin;    // El punto desde donde se lanza el raycast (el cañón de la torreta)
+    [Header("Shoot")]
+
+
+    //public Factory<Bullet> factory;
+
+
+    //public Transform bulletSpawner;
+    //public float cdShoot = 1f;
+    //public float cdShootReload = 0f;
+
+    public Transform raycastOrigin;    //punto desde donde se lanza el raycast (el cañón de la torreta)
     [Range(5f, 20f)] public float rotationSpeed;
-    [Range(10f, 30f)] public float rayRange; // Rango de detección del raycast
+    [Range(10f, 30f)] public float rayRange; //rango de detección del raycast
+
+    
+
+    //private void Awake()
+    //{
+    //    _turretAttack = new TurretAttack(cdShoot, cdShootReload, bulletSpawner); //factory
+    //}
 
     private void Update()
     {
@@ -17,6 +39,8 @@ public class Torret : MonoBehaviour
         {
             RotateTowardsTarget();
             RaycastAndShoot();
+
+            //_turretAttack.ReloadCooldown();
         }
     }
 
@@ -39,12 +63,16 @@ public class Torret : MonoBehaviour
 
         if (Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hit, rayRange))
         {
-            // Verifica si el objeto golpeado tiene un componente que implemente la interfaz IDamageable
-            IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-            if (damageable != null)
-            {
-                Shoot(); 
-            }
+            //si el objeto que toca el ray tiene la interfaz IDamageable pega el tiro
+            //IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+            //if (damageable != null)
+            //{
+            //_turretAttack.Shoot();
+            //}
+
+
+            turretAttack.Shoot();
+
         }
     }
 
@@ -64,11 +92,11 @@ public class Torret : MonoBehaviour
         }
     }
 
-    private void Shoot()
-    {
-        // Implementa la lógica de disparo
-        Debug.Log("Disparando al objetivo");
-    }
+    //private void Shoot()
+    //{
+    //    // Implementa la lógica de disparo
+    //    Debug.Log("Disparando al objetivo");
+    //}
 
 
     /*
