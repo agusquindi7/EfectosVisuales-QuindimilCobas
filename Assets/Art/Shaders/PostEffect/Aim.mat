@@ -39,8 +39,8 @@ Material:
     m_Floats:
     - _AngleDistortion: 180
     - _AngleSpeed: 4
-    - _CellsAmount: 4
-    - _ScreenBorderAmount: -0.1
+    - _CellsAmount: 4.7
+    - _ScreenBorderAmount: -1
     - _speed: 0
     m_Colors:
     - _Color: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}

@@ -18,6 +18,7 @@ public class DitherEffect : MonoBehaviour, IObserver
             _obs.Subscribe(this);
 
         ditherMat.SetFloat("_isOn", 0f);
+        urpAsset.renderScale = 1;
     }
 
     public void Notify(bool isOnButton)

@@ -6,6 +6,7 @@ using TMPro;
 public class UIManager : MonoBehaviour, IObserver
 {
     public GameObject text;
+    //public string generalText = "Device Activated";
     public TextMeshProUGUI tmp; 
     IObservable _obs;
     private void Start()
@@ -21,22 +22,23 @@ public class UIManager : MonoBehaviour, IObserver
     {
         if (isOnButton)
         {
-            text.SetActive(true);
-            tmp.text = "RETRO MODE ACTIVATED";
+            StartCoroutine(TextSeconds("Device Activated"));
         }
         else
         {
-            text.SetActive(false);
+            StartCoroutine(TextSeconds("Device Deactivated"));
         }
     }
     private void OnDestroy()
     {
         _obs.Unsubscribe(this);
     }
-    //IEnumerator TextSeconds()
-    //{
-    //    text.SetActive(true);
-    //    yield return new WaitForSeconds(2f);
-    //    text.SetActive(false);
-    //}
+
+    IEnumerator TextSeconds(string textString)
+    {
+        text.SetActive(true);
+        tmp.text = textString;
+        yield return new WaitForSeconds(2f);
+        text.SetActive(false);
+    }
 }
