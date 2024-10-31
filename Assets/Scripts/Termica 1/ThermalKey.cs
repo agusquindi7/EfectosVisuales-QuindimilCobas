@@ -4,6 +4,7 @@ using UnityEngine;
 public class ThermalKey : MonoBehaviour, IObservable, IInteractuable
 {
     List<IObserver> _observers = new();
+    public bool isOnKey = false;
     //private void OnTriggerEnter(Collider other)
     //{
     //    foreach (var item in _observers)
@@ -20,9 +21,10 @@ public class ThermalKey : MonoBehaviour, IObservable, IInteractuable
     //}
     public void Interact()
     {
+        isOnKey = !isOnKey;
         foreach (var item in _observers)
         {
-            item.Notify(true);
+            item.Notify(isOnKey);
         }
     }
     public void Subscribe(IObserver obs)

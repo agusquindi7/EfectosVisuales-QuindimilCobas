@@ -43,9 +43,9 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.25
+    - _Smoothness: 0.86
     m_Colors:
-    - _Color: {r: 0.5372549, g: 0.60784316, b: 0.65882355, a: 0}
+    - _Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0}
     - _Tilin: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &536985636478820499

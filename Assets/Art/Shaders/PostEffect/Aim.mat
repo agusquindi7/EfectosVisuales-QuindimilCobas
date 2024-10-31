@@ -38,8 +38,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _AngleDistortion: 180
-    - _AngleSpeed: 12
-    - _CellsAmount: 7.92
+    - _AngleSpeed: 4
+    - _CellsAmount: 4.7
     - _ScreenBorderAmount: -1
     - _speed: 0
     m_Colors:
