@@ -23,7 +23,7 @@ public class AIM
     public void UpdateAim()
     {    
         //-1 para "apagarlo", su maximo, 0.2f para "prenderlo"
-        Debug.Log(_borderFloatRef);
+        //Debug.Log(_borderFloatRef);
         if (_controls.IsAiming()) //si mantiene el click derecho es true
         {
             Debug.Log("esta entrando");
