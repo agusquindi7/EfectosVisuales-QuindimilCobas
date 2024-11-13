@@ -1,30 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class ThermalKey : MonoBehaviour, IObservable, IInteractuable
+public class ThermalKey : MonoBehaviour, IObservable
 {
     List<IObserver> _observers = new();
-    public bool isOnKey = false;
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    foreach (var item in _observers)
-    //    {
-    //        item.Notify(true);
-    //    }
-    //}
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    foreach (var item in _observers)
-    //    {
-    //        item.Notify(false);
-    //    }
-    //}
-    public void Interact()
+
+    private void OnTriggerEnter(Collider other)
     {
-        isOnKey = !isOnKey;
         foreach (var item in _observers)
         {
-            item.Notify(isOnKey);
+            
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        foreach (var item in _observers)
+        {
+            
+        }
+    }
+    public void Interact()
+    {
+        foreach (var item in _observers)
+        {
+            
         }
     }
     public void Subscribe(IObserver obs)
