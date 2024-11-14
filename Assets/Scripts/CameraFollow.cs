@@ -43,7 +43,7 @@ public class CameraFollow
 
     public void CameraStart()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         _mouseX = _controls.GetMouseX();
         _mouseY = _controls.GetMouseY();
 
