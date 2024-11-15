@@ -78,6 +78,13 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _cameraFollow.CameraStart();
+
+
+
+        //ManagerPause.instance.Subscribe(ArtifialUpdate);
+
+
+
     }
 
     private void FixedUpdate()
@@ -98,7 +105,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Update()
+    void ArtifialUpdate()
     {
         _controls.ArtificialUpdate();
         _playerAttack.ReloadCooldown();

@@ -28,8 +28,10 @@ public class ScreenManager : MonoBehaviour
         screen.Activate();
 
         if(_screens.Count > 0)
-            //_screens.Peek().Hide();
-            _screens.Peek().Desactivate();
+            _screens.Peek().Hide();
+
+
+            //_screens.Peek().Desactivate();
 
         _screens.Push(screen);
     }

@@ -40,7 +40,7 @@ public class TurretAttack : MonoBehaviour
             //s.transform.position = _bulletSpawner.position;
             //s.transform.rotation = _bulletSpawner.rotation;
 
-            Instantiate(turretBullet, bulletSpawner);
+            Instantiate(turretBullet, bulletSpawner.position, bulletSpawner.rotation);
             Debug.Log("DISPARA");
             cdShootReload = 0;
         }

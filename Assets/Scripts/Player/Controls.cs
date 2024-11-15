@@ -14,6 +14,14 @@ public class Controls
     {
         _movement = movement;
         _playerAttack = playerAttack;
+
+
+
+
+        //ManagerPause.instance.Subscribe(ArtificialUpdate);
+
+
+
     }
 
     public void ArtificialUpdate() //SE REVIZAN LOS CONTROLES EN EL UPDATE DEL PLAYER
