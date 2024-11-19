@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 
 
 
-        //ManagerPause.instance.Subscribe(ArtifialUpdate);
+        //ManagerPause.instance.Subscribe(ArtificialUpdate);
 
 
 
@@ -105,7 +105,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    void ArtifialUpdate()
+    //void ArtificialUpdate()
+    void Update()
     {
         _controls.ArtificialUpdate();
         _playerAttack.ReloadCooldown();
