@@ -15,7 +15,7 @@ public class PlayerDamageController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            _playerLife.TakeDamage(_playerLife.life); // Reduce la vida del jugador a 0
+            _playerLife.LifeController(_playerLife.life);
             Debug.Log("Vida del jugador reducida a 0.");
         }
     }
