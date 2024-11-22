@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: aca0114c95a068f4c9963fb6c8c2799f
+  - enabled: 1
     path: Assets/Scenes/Efectos Visuales.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/TestGameLechu.unity
+    guid: da14468c8044a1d40a4102ab7f4938e2
+  - enabled: 0
     path: Assets/Scenes/BlockingLevel.unity
     guid: b0aa96b203b69e543936490cd706f7c2
   m_configObjects: {}
