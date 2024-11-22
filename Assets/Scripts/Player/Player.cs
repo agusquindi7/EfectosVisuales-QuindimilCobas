@@ -105,7 +105,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    void ArtifialUpdate()
+    //void ArtifialUpdate()
+    void Update()
     {
         _controls.ArtificialUpdate();
         _playerAttack.ReloadCooldown();
@@ -125,6 +126,5 @@ public class Player : MonoBehaviour
 #if !UNITYEDITOR
         _cameraFollow.OnDrawGizmoscam();
 #endif
-    }
-    
+    }    
 }

@@ -11,17 +11,23 @@ public class ScreenManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (_screens.Count <= 0)
                 ActiveScreen(screenPaused);
+            Cursor.lockState = CursorLockMode.None;
+
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
             DesactiveScreen();
+        }
     }
     public void ActiveScreen(IScreen screen)
     {

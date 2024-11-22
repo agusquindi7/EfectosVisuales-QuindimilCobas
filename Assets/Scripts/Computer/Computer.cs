@@ -19,7 +19,7 @@ public class Computer : MonoBehaviour , IObservable , IInteractuable
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
         foreach (var hit in colliders)
         {
-            if(hit.GetComponent<PlayerLife>())
+            if (hit.GetComponent<PlayerLife>())
             {
                 if (!isKeyOn)
                 {
@@ -28,12 +28,35 @@ public class Computer : MonoBehaviour , IObservable , IInteractuable
                 }
                 Interact();
             }
-            else 
+            else
             {
                 text.SetActive(false);
             }
         }
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other == GetComponent<PlayerLife>())
+    //    {
+    //        if (!isKeyOn)
+    //        {
+    //            text.SetActive(true);
+    //            tmp.text = "Press 'E'' to activate RETRO MODE";
+    //        }
+    //        Interact();
+    //        Debug.Log("CAMBIA A FULLSCREEN");
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other == GetComponent<PlayerLife>())
+    //    {
+    //        text.SetActive(false);
+    //        Interact();
+    //    }
+    //}
 
     private void OnDrawGizmos()
     {
