@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
 
 
 
-        //ManagerPause.instance.Subscribe(ArtifialUpdate);
+        //ManagerPause.instance.Subscribe(ArtificialUpdate);
 
 
 
