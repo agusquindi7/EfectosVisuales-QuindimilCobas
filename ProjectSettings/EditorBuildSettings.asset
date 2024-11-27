@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TestLab-Level1.unity
+    guid: 8f6f9c7f3f842e34a8b336e16c2a0c30
+  - enabled: 0
     path: Assets/Scenes/BlockingLevel.unity
     guid: b0aa96b203b69e543936490cd706f7c2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Efectos Visuales.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

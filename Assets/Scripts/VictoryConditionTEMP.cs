@@ -8,7 +8,7 @@ public class VictoryConditionTEMP : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PlayerLife>())
+        if (other.GetComponent<PlayerLife>())
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
