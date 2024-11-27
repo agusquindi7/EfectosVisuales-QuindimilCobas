@@ -13,6 +13,9 @@ public class ColliderChecker : MonoBehaviour
     {
         textInteractuable.text = "Press " + interactKey + " to open";
         textInteractuable.enabled = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void Update()
     {
