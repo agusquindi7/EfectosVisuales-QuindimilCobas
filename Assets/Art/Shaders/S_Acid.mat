@@ -55,6 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Alpha: 30
+    - _DissolveAmount: 0
     - _Fresnel_Power: 1
     - _Gloss: 0.3
     - _Pan_Speed: 0.01
