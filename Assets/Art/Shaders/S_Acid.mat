@@ -36,6 +36,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SGWaves_b6aa9534a9ee49f782eaa0568097e37e_SampleTexture_912881106_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Water_Bump:
         m_Texture: {fileID: 2800000, guid: 0b9a61becdea660498b578f0a00a02e0, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -58,9 +62,12 @@ Material:
     - _DissolveAmount: 0
     - _Fresnel_Power: 1
     - _Gloss: 0.3
-    - _Pan_Speed: 0.01
+    - _Pan_Speed: 0.027
     - _QueueControl: 0
     - _QueueOffset: -1
+    - _WaveNoiseScale: 80
+    - _WaveSize: 1
+    - _WaveSpeed: 0.02
     m_Colors:
     - _Main_Color: {r: 0.14195494, g: 0.7169812, b: 0.13798502, a: 0}
     - _Top_Color: {r: 0.46894208, g: 0.8207547, b: 0.3670167, a: 0}
