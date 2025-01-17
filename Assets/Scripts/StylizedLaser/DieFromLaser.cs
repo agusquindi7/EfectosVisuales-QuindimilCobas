@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DieFromLaser : MonoBehaviour
 {
     [SerializeField] GameObject panel;
+    Entities playerLife;
 
 
     private void Awake()
@@ -17,10 +18,19 @@ public class DieFromLaser : MonoBehaviour
     {
         if (other.GetComponent<PlayerLife>())
         {
-            panel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0f;
+            playerLife = other.GetComponent<PlayerLife>();
+            //panel.SetActive(true);
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+            //Time.timeScale = 0f;
+            playerLife.TakeDamage(25);
+            if (playerLife.LifeRemainingPJ())
+            {
+                panel.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0f;
+            }
         }
     }
 

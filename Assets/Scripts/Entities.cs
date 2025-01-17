@@ -12,18 +12,23 @@ public abstract class Entities : MonoBehaviour
         life = maxLife;
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         if (life > maxLife) life = maxLife;
 
         life = Mathf.Clamp(life - damage, 0, maxLife);
 
-        LifeRemaining();
+        LifeRemainingPJ();
 
     }
 
-    public virtual void LifeRemaining()
+    public virtual bool LifeRemainingPJ()
     {
-        if (life <= 0) Destroy(gameObject);
+        if (life <= 0) 
+        { 
+            return true;
+            //Destroy(gameObject);
+        }
+        return false;
     }
 }
