@@ -58,10 +58,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 30
+    - _Alpha: 100
     - _DissolveAmount: 0
     - _Fresnel_Power: 1
-    - _Gloss: 0.3
+    - _Gloss: 0.6
     - _Pan_Speed: 0.027
     - _QueueControl: 0
     - _QueueOffset: -1
