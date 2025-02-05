@@ -58,17 +58,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 100
-    - _DissolveAmount: 0
+    - _Alpha: 255
+    - _DissolveAmount: 1.1
     - _Fresnel_Power: 1
-    - _Gloss: 0.6
-    - _Pan_Speed: 0.027
+    - _Gloss: 2
+    - _Pan_Speed: 0.05
     - _QueueControl: 0
     - _QueueOffset: -1
-    - _WaveNoiseScale: 80
-    - _WaveSize: 1
-    - _WaveSpeed: 0.02
+    - _WaveNoiseScale: 70
+    - _WaveSize: 3
+    - _WaveSpeed: 0.04
     m_Colors:
-    - _Main_Color: {r: 0.14195494, g: 0.7169812, b: 0.13798502, a: 0}
-    - _Top_Color: {r: 0.46894208, g: 0.8207547, b: 0.3670167, a: 0}
+    - _Main_Color: {r: 0.21103826, g: 0.7924528, b: 0.13008183, a: 1}
+    - _Top_Color: {r: 0.22471905, g: 1, b: 0, a: 1}
   m_BuildTextureStacks: []
