@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 using TMPro;
 
@@ -18,6 +19,8 @@ public class FSM_Manager : MonoBehaviour
     public float timeChecking = 4;
     public float speed = 3;
     public Transform[] waypoints;
+    public GameObject button;
+    //public GameObject defeatPanel;
     public GameObject fovMesh;
     public bool isOnPlate;
     public TextMeshProUGUI tmpro;

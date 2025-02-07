@@ -69,6 +69,6 @@ Material:
     - _WaveSize: 3
     - _WaveSpeed: 0.04
     m_Colors:
-    - _Main_Color: {r: 0.21103826, g: 0.7924528, b: 0.13008183, a: 1}
-    - _Top_Color: {r: 0.22471905, g: 1, b: 0, a: 1}
+    - _Main_Color: {r: 0.06630057, g: 0.2924528, b: 0.03421145, a: 1}
+    - _Top_Color: {r: 0.11185311, g: 0.4056604, b: 0.028319674, a: 1}
   m_BuildTextureStacks: []
