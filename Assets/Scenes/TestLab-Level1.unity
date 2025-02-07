@@ -46237,7 +46237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &440677319
 Light:
   m_ObjectHideFlags: 0
@@ -107037,6 +107037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8890163123a77e4699adaf2f15d13ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelName: ExperimentationRoom
 --- !u!1001 &1043222888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -117458,6 +117459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8890163123a77e4699adaf2f15d13ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelName: 
 --- !u!65 &1139474650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -234774,6 +234776,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1511050362735405839, guid: 873019258143155498556915ed49a135, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2152800068058000028, guid: 873019258143155498556915ed49a135, type: 3}
       propertyPath: m_LocalPosition.x
       value: 73.92

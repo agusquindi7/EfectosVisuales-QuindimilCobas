@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class VictoryConditionTEMP : MonoBehaviour
 {
+    public string levelName;
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<PlayerLife>())
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(levelName);
         }
     }
 }
