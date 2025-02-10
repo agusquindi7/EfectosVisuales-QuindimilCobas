@@ -1,0 +1,6 @@
+{
+"IDTitle" : "Experiment 317",
+"IDButtonPlay" : "Play",
+"IDCredits" : "Credits Cobas Quindimil Telechea",
+"IDExit" : "Exit"
+}

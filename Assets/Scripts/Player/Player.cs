@@ -98,14 +98,14 @@ public class Player : MonoBehaviour
         {
         _cameraFollow.CameraLateUpdate();
 
-        //se sincroniza la rotación del personaje con la cámara
+        //se sincroniza la rotaciï¿½n del personaje con la cï¿½mara
         //float cameraRotation = _cameraFollow.GetHorizontalRotation();
         //_movement.Rotate(cameraRotation);
 
         }
     }
 
-    //void ArtifialUpdate()
+    //void ArtificialUpdate()
     void Update()
     {
         _controls.ArtificialUpdate();
