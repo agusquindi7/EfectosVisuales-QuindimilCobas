@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Underacid : MonoBehaviour
 {
-    public Transform target;
+    public Transform target, bottom;
     public bool isOnPool;
     [SerializeField] string floatName;
     public Material underAcidMat; //Modifico el valor Borderstrenght de 0.01 a 0.28 que son los valores que le quedan bien
@@ -15,10 +15,11 @@ public class Underacid : MonoBehaviour
         //Sino apago el postproceso
         if (isOnPool)
         {
+            float distanceTopBottom = Vector3.Distance(transform.position, bottom.position);
             float distanceY = transform.position.y - target.position.y;
             if (distanceY > 0)
             {
-                float borderStrenght = distanceY / 2.576795f;
+                float borderStrenght = distanceY / distanceTopBottom;
                 underAcidMat.SetFloat(floatName, borderStrenght);
                 Debug.Log(distanceY);
             }

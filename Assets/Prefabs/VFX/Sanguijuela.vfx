@@ -41,8 +41,8 @@ MonoBehaviour:
   - title: TUTORIALES 2 ANGUILA ELECTRICA
     position:
       serializedVersion: 2
-      x: 6255
-      y: -373
+      x: 5790
+      y: -303
       width: 410
       height: 100
     contents: 'BABOSA 2
@@ -201,8 +201,8 @@ MonoBehaviour:
   - title: 'ELECTRICIDAD 2 '
     position:
       serializedVersion: 2
-      x: 7735
-      y: 1462
+      x: 7373
+      y: 1002
       width: 198
       height: 100
     contents: 'SEPARADA
@@ -234,7 +234,7 @@ MonoBehaviour:
     x: -2973
     y: -756
     width: 11347
-    height: 4764
+    height: 4305
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -330,6 +330,8 @@ MonoBehaviour:
   - {fileID: 8926484042661615848}
   - {fileID: 8926484042661615966}
   - {fileID: 8926484042661615990}
+  - {fileID: 8926484042661616056}
+  - {fileID: 8926484042661616058}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -15601,8 +15603,12 @@ MonoBehaviour:
   m_Label: 
   m_Data: {fileID: 8926484042661615353}
   m_InputFlowSlot:
-  - link: []
-  - link: []
+  - link:
+    - context: {fileID: 8926484042661616056}
+      slotIndex: 0
+  - link:
+    - context: {fileID: 8926484042661616058}
+      slotIndex: 0
   m_OutputFlowSlot:
   - link:
     - context: {fileID: 8926484042661615357}
@@ -24699,7 +24705,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615691}
-  m_UIPosition: {x: 7318, y: 1599}
+  m_UIPosition: {x: 6956, y: 1140}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -24846,7 +24852,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661615714}
   - {fileID: 8926484042661615726}
-  m_UIPosition: {x: 7318, y: 1850}
+  m_UIPosition: {x: 6956, y: 1390}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -25213,7 +25219,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615730}
-  m_UIPosition: {x: 7318, y: 2302}
+  m_UIPosition: {x: 6956, y: 1842}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -25908,7 +25914,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 7893, y: 1599}
+  m_UIPosition: {x: 7530, y: 1140}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -25998,7 +26004,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615995}
   - {fileID: 8926484042661616002}
   - {fileID: 8926484042661616004}
-  m_UIPosition: {x: 7893, y: 1965}
+  m_UIPosition: {x: 7530, y: 1506}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -26428,7 +26434,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 8926484042661615827}
   - {fileID: 8926484042661615983}
-  m_UIPosition: {x: 7893, y: 2638}
+  m_UIPosition: {x: 7530, y: 2178}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -27178,7 +27184,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615853}
   - {fileID: 8926484042661615957}
   - {fileID: 8926484042661615963}
-  m_UIPosition: {x: 7893, y: 3280}
+  m_UIPosition: {x: 7530, y: 2821}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -27329,7 +27335,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 8926484042661615848}
   m_Children: []
-  m_UIPosition: {x: 0, y: 91}
+  m_UIPosition: {x: 0, y: 90}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -27912,7 +27918,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 7496, y: 2951}
+  m_UIPosition: {x: 7134, y: 2492}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -28721,7 +28727,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 7221, y: 2970}
+  m_UIPosition: {x: 6858, y: 2510}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -29417,3 +29423,103 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
   m_LinkedSlots: []
+--- !u!114 &8926484042661616056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2461f61b3c026d54db1951a4e17ab20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 6046, y: -493}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots: []
+  m_Label: 
+  m_Data: {fileID: 8926484042661616057}
+  m_InputFlowSlot:
+  - link: []
+  m_OutputFlowSlot:
+  - link:
+    - context: {fileID: 8926484042661615352}
+      slotIndex: 0
+  eventName: OnPlay
+--- !u!114 &8926484042661616057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68759077adc0b143b6e1c101e82065e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  title: 
+  m_Owners:
+  - {fileID: 8926484042661616056}
+--- !u!114 &8926484042661616058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2461f61b3c026d54db1951a4e17ab20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 6508, y: -493}
+  m_UICollapsed: 0
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots: []
+  m_Label: 
+  m_Data: {fileID: 8926484042661616059}
+  m_InputFlowSlot:
+  - link: []
+  m_OutputFlowSlot:
+  - link:
+    - context: {fileID: 8926484042661615352}
+      slotIndex: 1
+  eventName: OnStop
+--- !u!114 &8926484042661616059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68759077adc0b143b6e1c101e82065e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  title: 
+  m_Owners:
+  - {fileID: 8926484042661616058}
