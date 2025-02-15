@@ -26,13 +26,15 @@ public class ScientistAlertedState : ScientistBaseState
         {
             sct.transform.position += (sct.waypoints[1].position - sct.transform.position).normalized * Time.deltaTime * sct.speed;
         }
-        else if (distanceToWaypoint2 <= 0.1) //Si llegue al waypoint 2 hago correr el tiempo de chequeo
+        else if (distanceToWaypoint2 <= 0.1) //Si llegue al waypoint 2 hago correr el tiempo de chequeo, prendo idle y mirar para los costados
         {
+            sct.anim.SetBool("isWatching", true);
             sct.counter += Time.deltaTime;
             sct.counter = Mathf.Clamp(sct.counter, 0, sct.timeChecking);
         }
-        if (distanceToWaypoint1 >= 0.05 && sct.counter == sct.timeChecking) //Si termina el tiempo y estoy lejos del waypoint 1, vuelvo al waypoint 1
+        if (distanceToWaypoint1 >= 0.05 && sct.counter == sct.timeChecking) //Si termina el tiempo y estoy lejos del waypoint 1, vuelvo al waypoint 1, prendo walking
         {
+            sct.anim.SetBool("isWatching", false);
             float rotationSpeed = 0.05f;
             Quaternion currentRot = sct.transform.rotation;
             Quaternion targetRot = sct.waypoints[0].transform.rotation;
@@ -41,8 +43,9 @@ public class ScientistAlertedState : ScientistBaseState
 
             sct.transform.position += (sct.waypoints[0].position - sct.transform.position).normalized * Time.deltaTime * sct.speed;
 
-            if (distanceToWaypoint1 <= 0.2) //Si llego al waypoint 1 cambio a Idle de vuelta
+            if (distanceToWaypoint1 <= 0.2) //Si llego al waypoint 1 cambio a Idle de vuelta, prendo standup al reves y paso con exit time a Sitting idle
             {
+                sct.anim.SetBool("isAlerted", false);
                 sct.SwitchState(sct.idleState);
             } 
         }

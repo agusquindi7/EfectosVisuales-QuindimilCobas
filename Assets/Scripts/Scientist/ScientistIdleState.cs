@@ -11,6 +11,8 @@ public class ScientistIdleState : ScientistBaseState
         sct.tmpro.color = Color.green;
         sct.counter = 0;
         sct.fovMesh.SetActive(false);
+
+        sct.anim.SetBool("isAlerted", false);
     }
 
     public override void OnUpdate(FSM_Manager sct)
@@ -22,7 +24,8 @@ public class ScientistIdleState : ScientistBaseState
         }
         if (sct.counter == sct.timeIdle) //Si se cumple el tiempo primero roto, y si estoy mirando para hacia donde tengo que ir cambio de estado
         {
-            float rotationSpeed = 0.05f;
+            
+            float rotationSpeed = 0.015f;
             Quaternion currentRot = sct.transform.rotation;
             Quaternion targetRot = sct.waypoints[1].transform.rotation;
 
@@ -37,6 +40,6 @@ public class ScientistIdleState : ScientistBaseState
 
     public override void OnExit(FSM_Manager sct)
     {
-
+        sct.anim.SetBool("isAlerted", true);
     }
 }

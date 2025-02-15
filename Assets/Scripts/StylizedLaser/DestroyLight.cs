@@ -6,9 +6,10 @@ public class DestroyLight : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Player>())
+        Light light = GetComponentInChildren<Light>();
+        
+        if (collision.gameObject.GetComponent<Player>() && light != null)
         {
-            Light light = GetComponentInChildren<Light>();
             Destroy(light.gameObject);
         }
     }

@@ -26,6 +26,7 @@ public class FSM_Manager : MonoBehaviour
     public TextMeshProUGUI tmpro;
     public KnockKnock knock;
     public FOV_Scientist fov;
+    public Animator anim;
 
     private void Start()
     {
