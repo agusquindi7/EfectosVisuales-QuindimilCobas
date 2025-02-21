@@ -13,6 +13,7 @@ public class ScientistWarningState : ScientistBaseState
         if (!sct.hasAlreadySaid2)
         {
             AudioManager.instance.AlertedScientists(sct.scientistAudios[1], 1f);
+            AudioManager.instance.PlayWarningMusic();
             sct.hasAlreadySaid2 = true;
         }
     }

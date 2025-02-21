@@ -7,9 +7,11 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [Header("References")]
-    public AudioSource audioSource;
-    public AudioClip janitorMusic, labMusic, doorSound;
+    public AudioSource audioSourceSFX, audioSourceMusic;
+    public AudioClip janitorMusic, labMusic, doorSound, backgroundMusic, warningMusic;
     public float janitorVolume, labVolume, doorVolume;
+
+    public bool isPlayingWarning = false;
 
     private void Awake()
     {
@@ -19,15 +21,29 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
         else Destroy(this.gameObject);
+
+        isPlayingWarning = false;
+
+        audioSourceMusic.clip = backgroundMusic;
     }
 
     public void AlertedScientists(AudioClip audioClip, float volume)
     {
-        audioSource.PlayOneShot(audioClip, volume);
+        audioSourceSFX.PlayOneShot(audioClip, volume);
     }
 
     public void PlayDoorSound()
     {
-        audioSource.PlayOneShot(doorSound, doorVolume);
+        audioSourceSFX.PlayOneShot(doorSound, doorVolume);
+    }
+
+    public void PlayWarningMusic()
+    {
+        if (!isPlayingWarning) 
+        {
+            audioSourceMusic.clip = warningMusic;
+            audioSourceMusic.Play();
+            isPlayingWarning = true;
+        }
     }
 }
