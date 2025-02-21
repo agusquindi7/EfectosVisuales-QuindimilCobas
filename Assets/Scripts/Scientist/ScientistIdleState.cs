@@ -19,6 +19,11 @@ public class ScientistIdleState : ScientistBaseState
     {
         if(sct.counter != sct.timeIdle && sct.isOnPlate)
         {   //Si el tiempo es distinto y babitas paso al salon principal empieza el contador de Alerted
+            if (!sct.hasAlreadySaid1)
+            {
+                sct.hasAlreadySaid1 = true;
+                AudioManager.instance.AlertedScientists(sct.scientistAudios[0], .5f);
+            }
             sct.counter += Time.deltaTime;
             sct.counter = Mathf.Clamp(sct.counter, 0, sct.timeIdle);
         }

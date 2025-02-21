@@ -17,6 +17,7 @@ public class ScientistAlertedState : ScientistBaseState
         //Si canSeePlayer es true entonces cambio directamente
         if (sct.fov.canSeePlayer)
         {
+            sct.anim.SetBool("isWarned", true);
             sct.SwitchState(sct.warningState);
         }
 
@@ -51,7 +52,7 @@ public class ScientistAlertedState : ScientistBaseState
         }
     }
 
-    public override void OnExit(FSM_Manager scientist)
+    public override void OnExit(FSM_Manager sct)
     {
 
     }

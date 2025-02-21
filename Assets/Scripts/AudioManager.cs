@@ -8,7 +8,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("References")]
     public AudioSource audioSource;
-    public AudioClip janitorMusic;
+    public AudioClip janitorMusic, labMusic, doorSound;
+    public float janitorVolume, labVolume, doorVolume;
 
     private void Awake()
     {
@@ -20,8 +21,13 @@ public class AudioManager : MonoBehaviour
         else Destroy(this.gameObject);
     }
 
-    public void PlayJanitorMusic()
+    public void AlertedScientists(AudioClip audioClip, float volume)
     {
+        audioSource.PlayOneShot(audioClip, volume);
+    }
 
+    public void PlayDoorSound()
+    {
+        audioSource.PlayOneShot(doorSound, doorVolume);
     }
 }
