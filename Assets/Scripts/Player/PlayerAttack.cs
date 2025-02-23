@@ -9,29 +9,47 @@ public class PlayerAttack
     int _ammo;
     Transform _bulletSpawner;    
     public Factory<Bullet> factory;
+    public Controls _controls;
+    private int hability;
 
+    //public PlayerAttack(float cdShoot, float cdShootReload, Transform bulletSpawner, int ammo, Factory<Bullet> bulletFactory, Controls controls)
     public PlayerAttack(float cdShoot, float cdShootReload, Transform bulletSpawner, int ammo, Factory<Bullet> bulletFactory)
     {
         _cdShoot = cdShoot;
         _cdShootReload = cdShootReload;
         _bulletSpawner = bulletSpawner;
         _ammo = ammo;
-        factory = bulletFactory; 
+        factory = bulletFactory;
+        //_controls = controls;
     }
-    
-    public void Shoot()
-    {
-        if (_ammo <= 0) return;
-         
-        else if (_ammo > 0 && _cdShootReload >= _cdShoot)
-        {
-            var s = factory.Create(); //creo la bala con la factory
-            s.transform.position = _bulletSpawner.position;
-            s.transform.rotation = _bulletSpawner.rotation;
 
-            _ammo--;
-            _cdShootReload = 0;
-        }
+    public void SetControls(Controls controls)
+    {
+        _controls = controls;
+    }
+
+    public void ArtificialUpdate()
+    {
+        hability = _controls.GetHability();
+        ReloadCooldown();
+        Debug.Log("hability es " + hability);
+    }
+
+    public void Shoot() //QUITE LA MUNICION PORQUE NO HACIA FALTA
+    {
+        if (hability == 0)          //0 SHOOT, 1 JUMP
+        {
+            //else if (_ammo > 0 && _cdShootReload >= _cdShoot)
+            if (_cdShootReload >= _cdShoot)
+            {
+                var s = factory.Create(); //creo la bala con la factory
+                s.transform.position = _bulletSpawner.position;
+                s.transform.rotation = _bulletSpawner.rotation;
+
+                //_ammo--;
+                _cdShootReload = 0;
+            }
+        }         
     }
 
     //public void ReloadCooldown(float deltaTime) //el time se lo puede pasar el Player o puedo usar el mismo de este script, da lo mismo

@@ -23,11 +23,15 @@ public class CameraFollow
     bool _isCameraBlocked;
     Transform _rotationYCam;
 
+    private int hability;
+    private float normalDistance;
+    private float meleDistance = 1;
+    private float jumpDistance = 40;
+
     //private float horizontalRotation;
 
     public CameraFollow(Transform player, Camera camera, float mouseSensitivity,
         float distance, float hitOffSet, Controls controls, Transform rotationYCam)
-
     {
         _player = player;
         _camera = camera;
@@ -38,7 +42,11 @@ public class CameraFollow
 
         //AGREGADO
         _rotationYCam = rotationYCam;
+    }
 
+    public void UpdateValues (float newdistance)
+    {
+        normalDistance = newdistance;
     }
 
     public void CameraStart()
@@ -46,11 +54,26 @@ public class CameraFollow
         //Cursor.lockState = CursorLockMode.Locked;
         _mouseX = _controls.GetMouseX();
         _mouseY = _controls.GetMouseY();
-
     }
 
+    public void ArtificialUpdate()
+    {
+        hability = _controls.GetHability();
+        CameraDistance();
+    }
+
+    public void CameraDistance()
+    {
+        if (_controls.IsAiming()) //es falso hasta que mantiene clic
+        {
+            if (hability == 0) _distance = meleDistance; //si la habilidad es Shoot la distancia va a ser a mele
+            else if (hability == 1) _distance = jumpDistance;
+        }
+        else _distance = normalDistance;
+    }
     public void CameraFixedUpdate()
     {
+        CameraDistance();
         _ray = new Ray(_player.transform.position, _direction);
         _isCameraBlocked = Physics.SphereCast(_ray, 0.1f, out _raycastHit, _distance);
     }
@@ -101,8 +124,7 @@ public class CameraFollow
 
         _direction = -_rotationYCam.transform.forward;
 
-        if (_isCameraBlocked)
-            _camPos = _raycastHit.point - _direction * _hitOffSet;
+        if (_isCameraBlocked) _camPos = _raycastHit.point - _direction * _hitOffSet;
 
         else _camPos = _rotationYCam.transform.position + _direction * _distance;
 
