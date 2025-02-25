@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletFactory : Factory<Bullet>
+public class BulletFactory : Factory<Bullet> //ESTA ES DEL PLAYER
 {
     public Bullet playerBullet;
 

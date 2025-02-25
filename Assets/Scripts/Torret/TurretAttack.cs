@@ -11,9 +11,8 @@ public class TurretAttack : MonoBehaviour
     public float cdShoot = 1f;
     public float cdShootReload = 0f;
 
-    Transform _bulletSpawner;
-
-    //public Factory<Bullet> factory;
+    //Transform _bulletSpawner;
+    public Factory2<Bullet2> factory;
 
     public GameObject turretBullet;
 
@@ -36,11 +35,11 @@ public class TurretAttack : MonoBehaviour
     {
         if (cdShootReload >= cdShoot)
         {
-            //var s = factory.Create(); //creo la bala con la factory
-            //s.transform.position = _bulletSpawner.position;
-            //s.transform.rotation = _bulletSpawner.rotation;
+            var s = factory.Create(); //creo la bala con la factory
+            s.transform.position = bulletSpawner.position;
+            s.transform.rotation = bulletSpawner.rotation;
 
-            Instantiate(turretBullet, bulletSpawner.position, bulletSpawner.rotation);
+            //Instantiate(turretBullet, bulletSpawner.position, bulletSpawner.rotation);
             Debug.Log("DISPARA");
             cdShootReload = 0;
         }

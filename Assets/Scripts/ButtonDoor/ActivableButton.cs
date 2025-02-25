@@ -8,7 +8,7 @@ public class ActivableButton : MonoBehaviour, IActivable
     //private int currentMaterialIndex = 0;    
     public Material onMat;
     public Material offMat;
-    public bool onOff = true;
+    public bool onOff = false;
     //public GameObject[] doors;
     public GameObject door;
     //Con vector tambien puedo definirlo manualmente, pero con un transform me parece mejor
@@ -18,30 +18,46 @@ public class ActivableButton : MonoBehaviour, IActivable
     public Transform targetPositionDown;
     //public GameObject[] winds;
     public GameObject windKill;
+    //public GameObject dissapearTrigger;
     public float speed = 5f;
-    private Renderer objRenderer;
     public bool canChange;
+    public GameObject antigravitytrigger;
+    private Renderer objRenderer;
+    
 
-    private bool lastState; // Para almacenar el último estado conocido
-
-
+    private bool lastState; //para almacenar el ultimo estado conocido
+        
     private void Awake()
     {
         if (targetPositionDown == null || targetPositionUp == null) Debug.Log("falta un target");
         if (door == null) Debug.Log("falta la puerta");
         if (onMat == null || offMat == null) Debug.Log("falta un material");
+        if (onMat == null && offMat == null)
+        {
+            if (onOff == false)
+            {
+                objRenderer.material = offMat;
+                Off();
+            }
+            else
+            {
+                objRenderer.material = onMat;
+                On();
+            }
+        }
     }
 
     private void Start()
     {
         objRenderer = GetComponent<Renderer>();
-        objRenderer.material = onMat;
+        //objRenderer.material = onMat;
+        //objRenderer.material = offMat;
         canChange = true;
 
-        lastState = onOff; // Guardar el estado inicial
+        lastState = onOff; //guarda el estado inicial
     }
 
-    public void Activate()
+    public void Activable()
     {
         //if (canChange == false) return;
         //else if (canChange == true)
@@ -56,22 +72,22 @@ public class ActivableButton : MonoBehaviour, IActivable
         //}
 
         //Si es falso retorna, si es true pasa; se hace falso, se cambia el booleano de onOff y se ejecuta su metodo en un corrutina. Al final de la corrutina se vuelve a cambiar el booleano canChange
-        if (!canChange) return; //Si no puede cambiar, salir de la función
+        if (!canChange) return; //Si no puede cambiar, salir de la funcion
 
-        canChange = false; // Bloquear cambios mientras se mueve
-        onOff = !onOff;
+        canChange = false; //bloquea cambios mientras se mueve
+        onOff = !onOff; //al entrar cambio la variable booleana
 
-        if (onOff) On();
+        if (onOff) On(); //si el booleano es true prendo
         else Off();
 
     }
 
     private void Update()
     {
-        if (onOff != lastState) // Si el valor cambió manualmente en el Inspector
+        if (onOff != lastState) //si el valor cambio manualmente en el Inspector
         {
-            Activate(); // Ejecutar el cambio de estado
-            lastState = onOff; // Actualizar el estado guardado
+            Activable();
+            lastState = onOff;
         }
     }
 
@@ -83,6 +99,8 @@ public class ActivableButton : MonoBehaviour, IActivable
         objRenderer.material = onMat;
         DoorUp();
         windKill.SetActive(true);
+        //dissapearTrigger.SetActive(true);
+        antigravitytrigger.SetActive(true);
     }
     private void Off()
     {
@@ -91,7 +109,9 @@ public class ActivableButton : MonoBehaviour, IActivable
         objRenderer.material = offMat;
         DoorDown();
         windKill.SetActive(false);
-    }       
+        //dissapearTrigger.SetActive(false);
+        antigravitytrigger.SetActive(false);
+    }
 
     private void DoorUp()
     {
@@ -116,7 +136,7 @@ public class ActivableButton : MonoBehaviour, IActivable
     }
     IEnumerator MoveDoor(Transform targetPosition)
     {
-        float duration = 2f; //Tiempo en segundos
+        float duration = 1.5f;
         float elapsedTime = 0f;
         Vector3 startPosition = door.transform.position;
         //canChange = false;
@@ -125,9 +145,9 @@ public class ActivableButton : MonoBehaviour, IActivable
             float t = elapsedTime / duration;
             door.transform.position = Vector3.Lerp(startPosition, targetPosition.position, t);
             elapsedTime += Time.deltaTime;
-            yield return null; // Espera un frame antes de continuar
+            yield return null;
         }        
-        door.transform.position = targetPosition.position; //Asegurar que la posición final sea exacta
+        door.transform.position = targetPosition.position; //aseguro que la posicion final sea exacta
         canChange = true;
         Debug.Log("Se cambio canChange a " + canChange + "al final de la corrutina");
     }

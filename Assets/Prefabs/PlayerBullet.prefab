@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 5
-  _speed: 100
+  _speed: 50
   _duration: 3
   _counter: 0
 --- !u!54 &218835302797461020

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IActivable
+public interface IAntigravity
 {
-    void Activable();
+    void Antigravity();
 }

@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public class Bullet2 : MonoBehaviour
 {
-    //RequireComponent <BoxCollider>;
     [SerializeField] protected float _damage = 5f; //si fuera privada, nadie, ni sus hijos podrian acceder al daño
     [SerializeField] protected float _speed = 10f; //protected es privada para todos menos para los que hereden
 
-    
+
     //como se que todas las balas se van a poder reutilizar, hago una var publica
     //pero para pedir cuando vale sea protected, no vas a saber cuantas hay, solo vas a poder modificar de afuera, no pedir.
-    public ObjectPool<Bullet> Pool
+    public ObjectPool2<Bullet2> Pool2
     {
         protected get; //todas las balas van a ser protected como privadas
         set; //pero si voy a poder modificarlo
     }
 
-public virtual void TurnOn()
+    public virtual void TurnOn()
     {
         gameObject.SetActive(true);
     }
@@ -33,5 +32,5 @@ public virtual void TurnOn()
         {
             other.GetComponent<IDamageable>().TakeDamage(_damage);
         }
-    }    
+    }
 }
