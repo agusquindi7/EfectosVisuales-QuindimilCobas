@@ -32,19 +32,23 @@ public class ActivableButton : MonoBehaviour, IActivable
         if (targetPositionDown == null || targetPositionUp == null) Debug.Log("falta un target");
         if (door == null) Debug.Log("falta la puerta");
         if (onMat == null || offMat == null) Debug.Log("falta un material");
-        if (onMat == null && offMat == null)
-        {
-            if (onOff == false)
-            {
-                objRenderer.material = offMat;
-                Off();
-            }
-            else
-            {
-                objRenderer.material = onMat;
-                On();
-            }
-        }
+
+        //ME TIRA UN NULO DE MATERIAL AL QUERER COMENZAR EN UN METODO
+        //if (onMat == null && offMat == null)
+        //{
+        //    if (onOff == false)
+        //    {
+        //        objRenderer.material = offMat;
+        //        Off();
+        //    }
+        //    else
+        //    {
+        //        objRenderer.material = onMat;
+        //        On();
+        //    }
+        //}
+        //if (onOff == false) Off();
+        //if (onOff == true) On();
     }
 
     private void Start()
@@ -55,6 +59,9 @@ public class ActivableButton : MonoBehaviour, IActivable
         canChange = true;
 
         lastState = onOff; //guarda el estado inicial
+
+        if (onOff == false) Off();
+        if (onOff == true) On();
     }
 
     public void Activable()
@@ -71,7 +78,7 @@ public class ActivableButton : MonoBehaviour, IActivable
         //    else if (onOff == true) On();
         //}
 
-        //Si es falso retorna, si es true pasa; se hace falso, se cambia el booleano de onOff y se ejecuta su metodo en un corrutina. Al final de la corrutina se vuelve a cambiar el booleano canChange
+        //Si es falso retorna, si es true pasa, se hace falso, se cambia el booleano de onOff y se ejecuta su metodo en un corrutina. Al final de la corrutina se vuelve a cambiar el booleano canChange
         if (!canChange) return; //Si no puede cambiar, salir de la funcion
 
         canChange = false; //bloquea cambios mientras se mueve

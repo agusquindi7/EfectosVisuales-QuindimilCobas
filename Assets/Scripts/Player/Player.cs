@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public float cdShoot = 1f;
     public float cdShootReload = 0f;
     public int ammo = 10;
+    public GameObject crossPoint;
     
     [Space(10)][Header("Canonball")]
     [Range(10f, 50f)] public float launchForce = 10f;
@@ -69,7 +70,7 @@ public class Player : MonoBehaviour
 
         //si inicializo antes los controles hay problemas nulos, queres inicializar algo que no existe
         //_playerAttack = new PlayerAttack(cdShoot, cdShootReload, bulletSpawner, ammo, factory, _controls);
-        _playerAttack = new PlayerAttack(cdShoot, cdShootReload, bulletSpawner, ammo, factory);
+        _playerAttack = new PlayerAttack(cdShoot, cdShootReload, bulletSpawner, ammo, factory, crossPoint);
 
         //_movement = new Movement(transform, rb, speed, rotationSpeed, bulletSpawner, launchForce, isJumping, jumpHeight, jumpDistance, velocity, lineRenderer, maxLineSegments, lineShow, raycastDistance, groundLayer); //monoBehaviour
         _movement = new Movement(transform, rb, speed, rotationSpeed, bulletSpawner, launchForce, isJumping, velocity, lineRenderer, maxLineSegments, raycastDistance, groundLayer, jumpHeight, jumpDistance,

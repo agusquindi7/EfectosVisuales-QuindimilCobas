@@ -11,9 +11,10 @@ public class PlayerAttack
     public Factory<Bullet> factory;
     public Controls _controls;
     private int hability;
+    private GameObject _crossPoint;
 
     //public PlayerAttack(float cdShoot, float cdShootReload, Transform bulletSpawner, int ammo, Factory<Bullet> bulletFactory, Controls controls)
-    public PlayerAttack(float cdShoot, float cdShootReload, Transform bulletSpawner, int ammo, Factory<Bullet> bulletFactory)
+    public PlayerAttack(float cdShoot, float cdShootReload, Transform bulletSpawner, int ammo, Factory<Bullet> bulletFactory, GameObject crossPoint)
     {
         _cdShoot = cdShoot;
         _cdShootReload = cdShootReload;
@@ -21,6 +22,7 @@ public class PlayerAttack
         _ammo = ammo;
         factory = bulletFactory;
         //_controls = controls;
+        _crossPoint = crossPoint;
     }
 
     public void SetControls(Controls controls)
@@ -33,6 +35,7 @@ public class PlayerAttack
         hability = _controls.GetHability();
         ReloadCooldown();
         Debug.Log("hability es " + hability);
+        Crossing();
     }
 
     public void Shoot() //QUITE LA MUNICION PORQUE NO HACIA FALTA
@@ -50,6 +53,12 @@ public class PlayerAttack
                 _cdShootReload = 0;
             }
         }         
+    }
+
+    public void Crossing()
+    {
+        if (_controls.IsAiming() == true && hability == 0) _crossPoint.SetActive(true);
+        else _crossPoint.SetActive(false);
     }
 
     //public void ReloadCooldown(float deltaTime) //el time se lo puede pasar el Player o puedo usar el mismo de este script, da lo mismo

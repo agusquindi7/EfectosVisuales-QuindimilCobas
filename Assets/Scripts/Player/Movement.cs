@@ -152,7 +152,7 @@ public class Movement
         }
 
         LineView();
-        // Actualizar la trayectoria constantemente para visualizar el salto
+        //Actualiza la trayectoria constantemente para visualizar el salto
         UpdateTrajectory();
     }
 
@@ -182,7 +182,7 @@ public class Movement
         }
     }
 
-    private void UpdateTrajectory() //Se actualiza constantemente la visualizacion de la trayectoria.
+    private void UpdateTrajectory() //Se actualiza constantemente la visualizacion de la trayectoria
     {
         //Calcula la velocidad inicial para el salto
         //float initialYVelocity = Mathf.Sqrt(2 * -gravity * jumpHeight);
