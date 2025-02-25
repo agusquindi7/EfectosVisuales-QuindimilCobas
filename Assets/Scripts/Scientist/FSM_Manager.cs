@@ -26,6 +26,10 @@ public class FSM_Manager : MonoBehaviour
     public TextMeshProUGUI tmpro;
     public KnockKnock knock;
     public FOV_Scientist fov;
+    public Animator anim;
+    public AudioClip[] scientistAudios;
+    public bool hasAlreadySaid1 = false;
+    public bool hasAlreadySaid2 = false;
 
     private void Start()
     {

@@ -66,7 +66,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: -1
     - _WaveNoiseScale: 70
-    - _WaveSize: 3
+    - _WaveSize: 1.5
     - _WaveSpeed: 0.04
     m_Colors:
     - _Main_Color: {r: 0.06630057, g: 0.2924528, b: 0.03421145, a: 1}
