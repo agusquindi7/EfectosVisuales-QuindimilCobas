@@ -7,7 +7,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [Header("References")]
-    public AudioSource audioSourceSFX, audioSourceMusic;
+    public IsGrounded isGrounded;
+    public AudioSource audioSourceSFX, audioSourceMusic, audioSourceBabitas;
     public AudioClip janitorMusic, labMusic, doorSound, backgroundMusic, warningMusic;
     public float janitorVolume, labVolume, doorVolume;
 
@@ -25,6 +26,19 @@ public class AudioManager : MonoBehaviour
         isPlayingWarning = false;
 
         audioSourceMusic.clip = backgroundMusic;
+    }
+
+    private void Update()
+    {
+        if (Input.GetAxisRaw("Horizontal") != 0 && isGrounded.isGrounded) 
+        {
+            audioSourceBabitas.mute = false;
+        }
+        else if (Input.GetAxisRaw("Vertical") != 0 && isGrounded.isGrounded)
+        {
+            audioSourceBabitas.mute = false;
+        }
+        else audioSourceBabitas.mute = true;
     }
 
     public void AlertedScientists(AudioClip audioClip, float volume)
