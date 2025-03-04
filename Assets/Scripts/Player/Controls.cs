@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Controls
 {
@@ -12,6 +13,8 @@ public class Controls
     //para funcionar le pido un movement y el playerattack
     //public Controls(Movement movement, PlayerAttack playerAttack, bool isJumping)
 
+    private TMP_Text _textHability;
+
     private enum HabilityMode
     {
         Shoot,  //modo disparo
@@ -19,13 +22,14 @@ public class Controls
     }
     private HabilityMode currentHability = HabilityMode.Shoot; //el enum esta inicializado en shoot
 
-    public Controls(Movement movement, PlayerAttack playerAttack)
+    public Controls(Movement movement, PlayerAttack playerAttack, TMP_Text textHability)
     {
         _movement = movement;
         _playerAttack = playerAttack;
 
-
         //_isJumping = isJumping;
+
+        _textHability = textHability;
 
         //PAUSA
         //ManagerPause.instance.Subscribe(ArtificialUpdate);
@@ -48,14 +52,16 @@ public class Controls
         //    Debug.Log("Modo actual: " + currentAbility);
         //}
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q)) //Nodo Shoot
         {
             currentHability = HabilityMode.Shoot;
+            _textHability.text = "ShootMode";
             Debug.Log("Modo actual: " + currentHability);
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)) //Modo Jump
         {
             currentHability = HabilityMode.Jump;
+            _textHability.text = "JumpMode";
             Debug.Log("Modo actual: " + currentHability);
         }
         #endregion Cambiar Habilidades
