@@ -26,16 +26,15 @@ public class DieFromLaser : MonoBehaviour
             playerLife.TakeDamage(25);
             if (playerLife.LifeRemainingPJ())
             {
-                panel.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                Time.timeScale = 0f;
+                Animator playerAnimator = playerLife.GetComponent<Animator>();
+                playerAnimator.SetTrigger("isDeath");
             }
         }
     }
 
     public void Restart()
-    {
+    {   
+
         Time.timeScale = 1f;
         panel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked; 

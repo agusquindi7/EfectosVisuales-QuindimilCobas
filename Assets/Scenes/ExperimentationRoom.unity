@@ -33138,7 +33138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c66917d3d222ae4fa364e969a51af81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAcidPool: 1
+  damageAcidPool: 5
 --- !u!1001 &1521107158
 PrefabInstance:
   m_ObjectHideFlags: 0
