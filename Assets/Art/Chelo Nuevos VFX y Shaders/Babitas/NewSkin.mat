@@ -57,11 +57,11 @@ Material:
     - _NoiseScale: 50
     - _Noise_Scale: 4
     - _Normal1VelX: 0
-    - _Normal1VelY: 0.26
+    - _Normal1VelY: -0.2
     - _Normal2Strength: 3
     - _Normal2Strength_1: 3
     - _Normal2VelX: 0
-    - _Normal2VelY: 0.25
+    - _Normal2VelY: 0.2
     - _PickageLerp: 0.4
     - _PickageMultiply: 5
     - _Power_Fresnel_Nucle: -1.2

@@ -22,7 +22,7 @@ public class Turret : MonoBehaviour
     //public float cdShoot = 1f;
     //public float cdShootReload = 0f;
 
-    public Transform raycastOrigin;    //punto desde donde se lanza el raycast (el cañón de la torreta)
+    public Transform raycastOrigin; //punto desde donde se lanza el raycast (el cañón de la torreta)
     [Range(5f, 20f)] public float rotationSpeed;
     [Range(10f, 30f)] public float rayRange; //rango de detección del raycast
 
@@ -37,7 +37,7 @@ public class Turret : MonoBehaviour
     {
         //si por cada puerta que haga tenga que desactivar una torreta, voy a siempre tener que usarlo y acceder a su booleano o ponerle una condicion de nulo si no hay torretas
         //en cambio si la condicion es que haya un objeto en escena que haga que permanezca activada, puedo jugar con eso para apagarlas o poner un objeto vacio para mantenerlo siempre prendido
-        if (!_onObjective.activeInHierarchy) //compara si hay un objeto en la escena
+        if (!_onObjective.activeInHierarchy) //compara si hay un objeto prendido en la escena
         {
             return;
         }

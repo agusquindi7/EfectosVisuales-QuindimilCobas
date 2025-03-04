@@ -54,7 +54,7 @@ Material:
     - _DropsDistortion: 0.081
     - _Float: 0.01
     - _Float_1: 0.3
-    - _ScreenBorderAmount: -0.9
+    - _ScreenBorderAmount: 20
     m_Colors:
     - _Vector2: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
