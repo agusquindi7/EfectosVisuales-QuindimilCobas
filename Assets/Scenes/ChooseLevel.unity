@@ -236,6 +236,10 @@ PrefabInstance:
       value: Paper (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b35bd107842c9c345940b680e84e1738, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b35bd107842c9c345940b680e84e1738, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -272,7 +276,7 @@ MonoBehaviour:
   audioSource: {fileID: 2033819962}
   clipHover: {fileID: 8300000, guid: 5d7541aaa9cab91438227ac16e27d321, type: 3}
   clipClick: {fileID: 8300000, guid: c28cbd08566a0d4459f5c8a7c72af2ff, type: 3}
-  levelName: ChooseLevel
+  levelName: ExperimentationRoom
 --- !u!65 &138738266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1048,7 +1052,7 @@ GameObject:
   - component: {fileID: 1266455628}
   - component: {fileID: 1266455627}
   m_Layer: 5
-  m_Name: SETTINGS
+  m_Name: Level 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1093,7 +1097,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SETTINGS
+  m_text: 'level
+
+    3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1102,8 +1108,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1126,7 +1132,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 64
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1378,7 +1384,7 @@ GameObject:
   - component: {fileID: 1496393034}
   - component: {fileID: 1496393033}
   m_Layer: 5
-  m_Name: CHOOSELEVEL
+  m_Name: Level 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1423,9 +1429,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CHOOSE
+  m_text: 'level
 
-    LEVEL'
+    2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1607,6 +1613,10 @@ PrefabInstance:
       value: Paper (4)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b35bd107842c9c345940b680e84e1738, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b35bd107842c9c345940b680e84e1738, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -1687,7 +1697,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 86a0a46e6cc489f41ae5d492eabcfdd3, type: 2}
     - target: {fileID: 919132149155446097, guid: b35bd107842c9c345940b680e84e1738, type: 3}
       propertyPath: m_Name
-      value: PaperExit
+      value: PaperGoBack
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b35bd107842c9c345940b680e84e1738, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1931,7 +1941,7 @@ GameObject:
   - component: {fileID: 1759851930}
   - component: {fileID: 1759851929}
   m_Layer: 5
-  m_Name: CREDITS
+  m_Name: Level 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1976,7 +1986,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CREDITS
+  m_text: 'level
+
+    4'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1985,8 +1997,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2009,7 +2021,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 64
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2390,7 +2402,7 @@ GameObject:
   - component: {fileID: 2001674979}
   - component: {fileID: 2001674978}
   m_Layer: 5
-  m_Name: NEWGAME
+  m_Name: Level 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2435,9 +2447,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'NEW
+  m_text: 'Level
 
-    GAME'
+    1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2817,7 +2829,7 @@ GameObject:
   - component: {fileID: 2092208188}
   - component: {fileID: 2092208187}
   m_Layer: 5
-  m_Name: EXIT
+  m_Name: Go Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2862,9 +2874,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'EXIT
+  m_text: 'Go
 
-'
+    Back'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
