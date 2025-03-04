@@ -4,7 +4,7 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
-public class PlayerLife : Entities
+public class PlayerLife : Entities, IDamageable
 {
     [SerializeField] Material damageNerves;
     [SerializeField] float cdNerves;
