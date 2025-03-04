@@ -4,15 +4,18 @@ using UnityEngine;
 
 using UnityEngine.SceneManagement;
 
-public class PlayerLife : Entities
+public class PlayerLife : Entities, IDamageable
 {
     [SerializeField] Material damageNerves;
     [SerializeField] float cdNerves;
     [SerializeField] float currentFloat;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
         damageNerves.SetFloat("_BorderStrenght", 0);
+
+        if (animator==null) animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -25,6 +28,11 @@ public class PlayerLife : Entities
         }
         
         currentFloat = Mathf.Clamp(currentFloat, 0, 1.6f);
+
+        if(life <= 0)
+        {
+            animator.SetTrigger("isDeath");
+        }
     }
 
     //public override bool LifeRemaining()
