@@ -43,4 +43,10 @@ public class Zoom : MonoBehaviour
             aimMat.SetFloat("_ScreenBorderAmount", aim);
         }
     }
+
+    private void OnDisable()
+    {
+        aimMat.SetFloat("_ScreenBorderAmount", -1f);
+        zoomMat.SetFloat("_Zoom", 0f);
+    }
 }

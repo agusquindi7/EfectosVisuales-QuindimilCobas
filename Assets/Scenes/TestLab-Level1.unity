@@ -8043,7 +8043,7 @@ GameObject:
   - component: {fileID: 61132898}
   - component: {fileID: 61132900}
   - component: {fileID: 61132899}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Palanca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58473,7 +58473,7 @@ GameObject:
   - component: {fileID: 536510395}
   - component: {fileID: 536510394}
   - component: {fileID: 536510393}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Termica_Babitas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93632,7 +93632,7 @@ GameObject:
   - component: {fileID: 881926745}
   - component: {fileID: 881926747}
   - component: {fileID: 881926746}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: OjodeBuey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171762,7 +171762,7 @@ GameObject:
   - component: {fileID: 1577247610}
   - component: {fileID: 1577247612}
   - component: {fileID: 1577247611}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Chispas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189371,7 +189371,7 @@ GameObject:
   - component: {fileID: 1696661289}
   - component: {fileID: 1696661291}
   - component: {fileID: 1696661290}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: TermicaSinPalanca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238113,7 +238113,7 @@ GameObject:
   - component: {fileID: 2109802137}
   - component: {fileID: 2109802139}
   - component: {fileID: 2109802138}
-  m_Layer: 11
+  m_Layer: 8
   m_Name: Caja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
