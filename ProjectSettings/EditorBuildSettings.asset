@@ -23,6 +23,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel3Chelo.unity
     guid: 27bec3726bfd0564b8a4ba6083d7960d
+  - enabled: 1
+    path: Assets/Scenes/BlockingTestLab-Level.unity
+    guid: 8e4c2aa87b0161d44bdfbbe382bb53c2
+  - enabled: 1
+    path: Assets/Scenes/BlockingExperimentationRoom.unity
+    guid: 5d041ccbfabdffb4d8710e5af469d45b
+  - enabled: 1
+    path: Assets/Scenes/BlockingNivel3Chelo.unity
+    guid: d47a86e160283fa49b170126cd194526
   - enabled: 0
     path: Assets/Scenes/BlockingLevel.unity
     guid: b0aa96b203b69e543936490cd706f7c2
