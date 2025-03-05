@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     public MonoBehaviour monoBehaviour;
     [SerializeField] Rigidbody rb;
     public float speed = 5f;
+    public TMP_Text textHability;    
 
     [Space(10)][Header("Rotation")]
     public float rotationSpeed = 10f;
@@ -67,6 +69,7 @@ public class Player : MonoBehaviour
     {
         rotationSpeed = mouseSensitivity;
         cameraRotationSpeed = rotationSpeed;
+        //textHability.text = "ShootMode";
 
         //si inicializo antes los controles hay problemas nulos, queres inicializar algo que no existe
         //_playerAttack = new PlayerAttack(cdShoot, cdShootReload, bulletSpawner, ammo, factory, _controls);
@@ -81,7 +84,7 @@ public class Player : MonoBehaviour
         //_aim = new AIM(aimShadowsMat, borderFloatRef, raycastDistance, groundLayer);
 
         //_controls = new Controls(_movement, _playerAttack, isJumping);
-        _controls = new Controls(_movement, _playerAttack);
+        _controls = new Controls(_movement, _playerAttack, textHability);
 
 
         //entonces inicializo un metodo de controls luego de crear controls
