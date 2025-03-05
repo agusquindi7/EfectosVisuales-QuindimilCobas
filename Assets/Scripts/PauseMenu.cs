@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0;
         pausePanel.SetActive(true);
@@ -30,7 +30,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None; 
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1;
         pausePanel.SetActive(false);
