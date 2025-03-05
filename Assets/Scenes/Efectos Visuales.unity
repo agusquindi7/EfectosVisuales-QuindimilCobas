@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44658053, g: 0.49641418, b: 0.5748196, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3161,6 +3161,7 @@ MonoBehaviour:
   damageNerves: {fileID: 2100000, guid: be90ee019aaa5664e94d00269ab08e9c, type: 2}
   cdNerves: 0
   currentFloat: 0
+  animator: {fileID: 0}
 --- !u!114 &303970779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50986,10 +50987,10 @@ VisualEffect:
   m_GameObject: {fileID: 520207087}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 48c2677d4dc20864b8e22de5a24e3770, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
-  m_ResetSeedOnPlay: 1
+  m_ResetSeedOnPlay: 0
   m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
@@ -51116,6 +51117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vfxRAIN: {fileID: 520207089}
   objective: {fileID: 162353199}
+  triggerRain: {fileID: 1427312829}
 --- !u!1 &525920392
 GameObject:
   m_ObjectHideFlags: 0
@@ -55626,6 +55628,7 @@ MonoBehaviour:
   damageNerves: {fileID: 0}
   cdNerves: 0
   currentFloat: 0
+  animator: {fileID: 0}
 --- !u!135 &829770493
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -61074,7 +61077,7 @@ Transform:
   m_GameObject: {fileID: 1427312829}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.514983, y: -29.50544, z: 8.833096}
+  m_LocalPosition: {x: 0, y: -29.50544, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 1
   m_Children: []
