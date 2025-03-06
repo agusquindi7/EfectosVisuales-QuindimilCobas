@@ -5,28 +5,89 @@ using UnityEngine.VFX;
 
 public class ActiveRain : MonoBehaviour
 {
-    public VisualEffect vfxRAIN;
+    //public VisualEffect vfxRAIN;
+    public VisualEffect [] vfxRains;
     public GameObject objective;
-    public GameObject triggerRain;
+    //public GameObject triggerRain;
+    public GameObject [] triggerRains;
+    public bool onActive = false;
 
     //private void Start()
     private void Awake()
     {
-        //gameObject.SetActive(false);
-        //vfxRAIN.gameObject.SetActive(true);
-        vfxRAIN.Stop();
-        triggerRain.SetActive(false);
+        if (objective != null) //si quiero que se apague al principio solo le meto un objetivo
+        {
+            OffRain();
+            OffTrigger();
+            //vfxRAIN.Stop();
+            //gameObject.SetActive(false);
+            //vfxRAIN.gameObject.SetActive(true);
+            //triggerRain.SetActive(false);
+        }
+        else
+        {
+            OnRain();
+            OnTrigger();
+        }
+            //fxRAIN.Play();
 
     }
 
     private void Update()
     {
-        if (!objective.activeInHierarchy)
+        if (objective != null)
         {
-            Debug.Log("el objetivo murio, prendiendo");
-            //vfxRAIN.gameObject.SetActive(true);
-            vfxRAIN.Play();
-            triggerRain.SetActive(true);
+            if (!objective.activeInHierarchy) //si no esta activo en la jerarquia
+            {
+                //if (onActive == true) return;
+                
+                Debug.Log("el objetivo murio, prendiendo");
+                //vfxRAIN.Play();
+                OnRain();
+                OnTrigger();
+                //OnActive();
+                //vfxRAIN.gameObject.SetActive(true);
+                //triggerRain.SetActive(true);
+            }            
+        }       
+    }
+
+    public void OnActive()
+    {
+        onActive = !onActive;
+    }
+
+    public void OffRain()
+    {
+        for (int i = 0; i < vfxRains.Length; i++)
+        {
+            vfxRains[i].Stop();
+
+        }
+    }
+
+    public void OnRain()
+    {
+        for (int i = 0; i < vfxRains.Length; i++)
+        {
+            vfxRains[i].Play();
+
+        }
+    }
+
+    public void OnTrigger()
+    {
+        for (int i = 0; i < vfxRains.Length; i++)
+        {
+            triggerRains[i].SetActive(true);
+        }
+    }
+
+    public void OffTrigger()
+    {
+        for (int i = 0; i < vfxRains.Length; i++)
+        {
+            triggerRains[i].SetActive(false);
         }
     }
 }

@@ -13749,7 +13749,6 @@ GameObject:
   - component: {fileID: 405205106}
   - component: {fileID: 405205105}
   - component: {fileID: 405205104}
-  - component: {fileID: 405205103}
   m_Layer: 0
   m_Name: VFXRain2 (2)
   m_TagString: Untagged
@@ -13757,21 +13756,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &405205103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405205102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfd058b37aed684da9cf87d9894ea25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxRAIN: {fileID: 405205105}
-  objective: {fileID: 461986072}
-  triggerRain: {fileID: 1689854891}
 --- !u!73398921 &405205104
 VFXRenderer:
   serializedVersion: 1
@@ -13822,7 +13806,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 48c2677d4dc20864b8e22de5a24e3770, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 1
+  m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 0
   m_AllowInstancing: 1
@@ -13830,10 +13814,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 32.5
+      - m_Value: 33
         m_Name: Height
         m_Overridden: 1
-      - m_Value: 0.033
+      - m_Value: 0.03
         m_Name: Particle Alpha Clip
         m_Overridden: 1
       - m_Value: 10
@@ -13842,7 +13826,7 @@ VisualEffect:
       - m_Value: -19.6
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 10.1
+      - m_Value: 11.7
         m_Name: FogRadius
         m_Overridden: 1
       - m_Value: 2000
@@ -13850,6 +13834,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 400
         m_Name: Bounds Mult
+        m_Overridden: 1
+      - m_Value: 200
+        m_Name: Particle Noise Scale
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -13859,10 +13846,10 @@ VisualEffect:
       - m_Value: {x: 2.9, y: 3.1}
         m_Name: LifeRain
         m_Overridden: 1
-      - m_Value: {x: 0.1, y: 0.3}
+      - m_Value: {x: 0.1, y: 0.2}
         m_Name: SizeRandom
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0}
+      - m_Value: {x: 0.1, y: 0.3}
         m_Name: FogLife
         m_Overridden: 1
     m_Vector3f:
@@ -13872,7 +13859,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 1.4980392, y: 1.4980392, z: 1.4980392, w: 1}
+      - m_Value: {x: 0.27612138, y: 0.3758228, z: 0.6886792, w: 1}
         m_Name: Particle Color
         m_Overridden: 1
     m_Uint:
@@ -15131,7 +15118,6 @@ GameObject:
   - component: {fileID: 439514726}
   - component: {fileID: 439514725}
   - component: {fileID: 439514724}
-  - component: {fileID: 439514723}
   m_Layer: 0
   m_Name: VFXRain2 (3)
   m_TagString: Untagged
@@ -15139,21 +15125,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &439514723
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 439514722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfd058b37aed684da9cf87d9894ea25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxRAIN: {fileID: 439514725}
-  objective: {fileID: 461986072}
-  triggerRain: {fileID: 5049894}
 --- !u!73398921 &439514724
 VFXRenderer:
   serializedVersion: 1
@@ -15204,7 +15175,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 48c2677d4dc20864b8e22de5a24e3770, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 1
+  m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 0
   m_AllowInstancing: 1
@@ -15212,10 +15183,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 32.5
+      - m_Value: 33
         m_Name: Height
         m_Overridden: 1
-      - m_Value: 0.033
+      - m_Value: 0.03
         m_Name: Particle Alpha Clip
         m_Overridden: 1
       - m_Value: 10
@@ -15224,7 +15195,7 @@ VisualEffect:
       - m_Value: -19.6
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 10.1
+      - m_Value: 11.7
         m_Name: FogRadius
         m_Overridden: 1
       - m_Value: 2000
@@ -15232,6 +15203,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 400
         m_Name: Bounds Mult
+        m_Overridden: 1
+      - m_Value: 200
+        m_Name: Particle Noise Scale
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -15241,10 +15215,10 @@ VisualEffect:
       - m_Value: {x: 2.9, y: 3.1}
         m_Name: LifeRain
         m_Overridden: 1
-      - m_Value: {x: 0.1, y: 0.3}
+      - m_Value: {x: 0.1, y: 0.2}
         m_Name: SizeRandom
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0}
+      - m_Value: {x: 0.1, y: 0.3}
         m_Name: FogLife
         m_Overridden: 1
     m_Vector3f:
@@ -15254,7 +15228,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 1.4980392, y: 1.4980392, z: 1.4980392, w: 1}
+      - m_Value: {x: 0.27612138, y: 0.3758228, z: 0.6886792, w: 1}
         m_Name: Particle Color
         m_Overridden: 1
     m_Uint:
@@ -17470,7 +17444,6 @@ GameObject:
   - component: {fileID: 576298523}
   - component: {fileID: 576298522}
   - component: {fileID: 576298521}
-  - component: {fileID: 576298520}
   m_Layer: 0
   m_Name: VFXRain2
   m_TagString: Untagged
@@ -17478,21 +17451,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &576298520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576298519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfd058b37aed684da9cf87d9894ea25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxRAIN: {fileID: 576298522}
-  objective: {fileID: 461986072}
-  triggerRain: {fileID: 224141067}
 --- !u!73398921 &576298521
 VFXRenderer:
   serializedVersion: 1
@@ -17543,7 +17501,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 48c2677d4dc20864b8e22de5a24e3770, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 1
+  m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 0
   m_AllowInstancing: 1
@@ -17551,10 +17509,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 32.5
+      - m_Value: 33
         m_Name: Height
         m_Overridden: 1
-      - m_Value: 0.033
+      - m_Value: 0.03
         m_Name: Particle Alpha Clip
         m_Overridden: 1
       - m_Value: 10
@@ -17563,7 +17521,7 @@ VisualEffect:
       - m_Value: -19.6
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 10.1
+      - m_Value: 11.7
         m_Name: FogRadius
         m_Overridden: 1
       - m_Value: 2000
@@ -17571,6 +17529,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 400
         m_Name: Bounds Mult
+        m_Overridden: 1
+      - m_Value: 200
+        m_Name: Particle Noise Scale
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -17580,10 +17541,10 @@ VisualEffect:
       - m_Value: {x: 2.9, y: 3.1}
         m_Name: LifeRain
         m_Overridden: 1
-      - m_Value: {x: 0.1, y: 0.3}
+      - m_Value: {x: 0.1, y: 0.2}
         m_Name: SizeRandom
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0}
+      - m_Value: {x: 0.1, y: 0.3}
         m_Name: FogLife
         m_Overridden: 1
     m_Vector3f:
@@ -17593,7 +17554,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 1.4980392, y: 1.4980392, z: 1.4980392, w: 1}
+      - m_Value: {x: 0.27612138, y: 0.3758228, z: 0.6886792, w: 1}
         m_Name: Particle Color
         m_Overridden: 1
     m_Uint:
@@ -34589,7 +34550,6 @@ GameObject:
   - component: {fileID: 657727412}
   - component: {fileID: 657727411}
   - component: {fileID: 657727410}
-  - component: {fileID: 657727409}
   m_Layer: 0
   m_Name: VFXRain2 (5)
   m_TagString: Untagged
@@ -34597,21 +34557,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &657727409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657727408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfd058b37aed684da9cf87d9894ea25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxRAIN: {fileID: 657727411}
-  objective: {fileID: 461986072}
-  triggerRain: {fileID: 899022364}
 --- !u!73398921 &657727410
 VFXRenderer:
   serializedVersion: 1
@@ -34662,18 +34607,18 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 48c2677d4dc20864b8e22de5a24e3770, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 1
+  m_InitialEventNameOverriden: 0
   m_StartSeed: 0
-  m_ResetSeedOnPlay: 1
+  m_ResetSeedOnPlay: 0
   m_AllowInstancing: 1
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 32.5
+      - m_Value: 33
         m_Name: Height
         m_Overridden: 1
-      - m_Value: 0.033
+      - m_Value: 0.03
         m_Name: Particle Alpha Clip
         m_Overridden: 1
       - m_Value: 10
@@ -34682,7 +34627,7 @@ VisualEffect:
       - m_Value: -19.6
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 10.1
+      - m_Value: 11.7
         m_Name: FogRadius
         m_Overridden: 1
       - m_Value: 2000
@@ -34690,6 +34635,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 400
         m_Name: Bounds Mult
+        m_Overridden: 1
+      - m_Value: 200
+        m_Name: Particle Noise Scale
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -34699,10 +34647,10 @@ VisualEffect:
       - m_Value: {x: 2.9, y: 3.1}
         m_Name: LifeRain
         m_Overridden: 1
-      - m_Value: {x: 0.1, y: 0.3}
+      - m_Value: {x: 0.1, y: 0.2}
         m_Name: SizeRandom
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0}
+      - m_Value: {x: 0.1, y: 0.3}
         m_Name: FogLife
         m_Overridden: 1
     m_Vector3f:
@@ -34712,7 +34660,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 1.4980392, y: 1.4980392, z: 1.4980392, w: 1}
+      - m_Value: {x: 0.27612138, y: 0.3758228, z: 0.6886792, w: 1}
         m_Name: Particle Color
         m_Overridden: 1
     m_Uint:
@@ -46083,7 +46031,6 @@ Transform:
   - {fileID: 71828144}
   - {fileID: 806532931}
   - {fileID: 1834589673}
-  - {fileID: 1927195229}
   - {fileID: 1115713830}
   - {fileID: 993688164}
   - {fileID: 2055067672}
@@ -56734,6 +56681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157603885}
+  - component: {fileID: 1157603886}
   m_Layer: 0
   m_Name: System-ButtonDoor
   m_TagString: Untagged
@@ -56763,6 +56711,34 @@ Transform:
   - {fileID: 461986079}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1157603886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157603884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dfd058b37aed684da9cf87d9894ea25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxRains:
+  - {fileID: 576298522}
+  - {fileID: 1840371771}
+  - {fileID: 405205105}
+  - {fileID: 439514725}
+  - {fileID: 1402563919}
+  - {fileID: 657727411}
+  objective: {fileID: 461986072}
+  triggerRains:
+  - {fileID: 224141067}
+  - {fileID: 98949014}
+  - {fileID: 1689854891}
+  - {fileID: 5049894}
+  - {fileID: 494679010}
+  - {fileID: 899022364}
+  onActive: 0
 --- !u!1 &1159184066
 GameObject:
   m_ObjectHideFlags: 0
@@ -56899,6 +56875,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1159184066}
   m_CullTransparentMesh: 1
+--- !u!1 &1165499445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1165499449}
+  - component: {fileID: 1165499448}
+  - component: {fileID: 1165499447}
+  - component: {fileID: 1165499446}
+  m_Layer: 5
+  m_Name: UI Canvas Hability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1165499446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165499445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1165499447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165499445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1165499448
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165499445}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1165499449
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165499445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1673170034}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1174747981
 GameObject:
   m_ObjectHideFlags: 0
@@ -73737,7 +73815,6 @@ GameObject:
   - component: {fileID: 1402563920}
   - component: {fileID: 1402563919}
   - component: {fileID: 1402563918}
-  - component: {fileID: 1402563917}
   m_Layer: 0
   m_Name: VFXRain2 (4)
   m_TagString: Untagged
@@ -73745,21 +73822,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1402563917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402563916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfd058b37aed684da9cf87d9894ea25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxRAIN: {fileID: 1402563919}
-  objective: {fileID: 461986072}
-  triggerRain: {fileID: 494679010}
 --- !u!73398921 &1402563918
 VFXRenderer:
   serializedVersion: 1
@@ -73810,7 +73872,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 48c2677d4dc20864b8e22de5a24e3770, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 1
+  m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 0
   m_AllowInstancing: 1
@@ -73818,10 +73880,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 32.5
+      - m_Value: 33
         m_Name: Height
         m_Overridden: 1
-      - m_Value: 0.033
+      - m_Value: 0.03
         m_Name: Particle Alpha Clip
         m_Overridden: 1
       - m_Value: 10
@@ -73830,7 +73892,7 @@ VisualEffect:
       - m_Value: -19.6
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 10.1
+      - m_Value: 11.7
         m_Name: FogRadius
         m_Overridden: 1
       - m_Value: 2000
@@ -73838,6 +73900,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 400
         m_Name: Bounds Mult
+        m_Overridden: 1
+      - m_Value: 200
+        m_Name: Particle Noise Scale
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -73847,10 +73912,10 @@ VisualEffect:
       - m_Value: {x: 2.9, y: 3.1}
         m_Name: LifeRain
         m_Overridden: 1
-      - m_Value: {x: 0.1, y: 0.3}
+      - m_Value: {x: 0.1, y: 0.2}
         m_Name: SizeRandom
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0}
+      - m_Value: {x: 0.1, y: 0.3}
         m_Name: FogLife
         m_Overridden: 1
     m_Vector3f:
@@ -73860,7 +73925,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 1.4980392, y: 1.4980392, z: 1.4980392, w: 1}
+      - m_Value: {x: 0.27612138, y: 0.3758228, z: 0.6886792, w: 1}
         m_Name: Particle Color
         m_Overridden: 1
     m_Uint:
@@ -88728,7 +88793,7 @@ Transform:
   m_GameObject: {fileID: 1644890568}
   serializedVersion: 2
   m_LocalRotation: {x: -0.70710707, y: -0, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 58, y: -6.2, z: 6.73}
+  m_LocalPosition: {x: 61, y: -3.4499998, z: 6.73}
   m_LocalScale: {x: 5, y: 0.1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89172,16 +89237,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1673170033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1165499449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30, y: 30}
+  m_AnchoredPosition: {x: -32, y: 30}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1673170035
@@ -90173,8 +90238,8 @@ Transform:
   m_GameObject: {fileID: 1708625053}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.75, y: 19.000002, z: -20.46}
-  m_LocalScale: {x: 40, y: 40, z: 0.5}
+  m_LocalPosition: {x: -9.5, y: 19.000002, z: -20.46}
+  m_LocalScale: {x: 45, y: 40, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1054918432}
@@ -114266,7 +114331,6 @@ GameObject:
   - component: {fileID: 1840371772}
   - component: {fileID: 1840371771}
   - component: {fileID: 1840371770}
-  - component: {fileID: 1840371769}
   m_Layer: 0
   m_Name: VFXRain2 (1)
   m_TagString: Untagged
@@ -114274,21 +114338,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1840371769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1840371768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dfd058b37aed684da9cf87d9894ea25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxRAIN: {fileID: 1840371771}
-  objective: {fileID: 461986072}
-  triggerRain: {fileID: 98949014}
 --- !u!73398921 &1840371770
 VFXRenderer:
   serializedVersion: 1
@@ -114339,7 +114388,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 48c2677d4dc20864b8e22de5a24e3770, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 1
+  m_InitialEventNameOverriden: 0
   m_StartSeed: 0
   m_ResetSeedOnPlay: 0
   m_AllowInstancing: 1
@@ -114347,10 +114396,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 32.5
+      - m_Value: 33
         m_Name: Height
         m_Overridden: 1
-      - m_Value: 0.033
+      - m_Value: 0.03
         m_Name: Particle Alpha Clip
         m_Overridden: 1
       - m_Value: 10
@@ -114359,7 +114408,7 @@ VisualEffect:
       - m_Value: -19.6
         m_Name: Gravity
         m_Overridden: 1
-      - m_Value: 10.1
+      - m_Value: 11.7
         m_Name: FogRadius
         m_Overridden: 1
       - m_Value: 2000
@@ -114367,6 +114416,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 400
         m_Name: Bounds Mult
+        m_Overridden: 1
+      - m_Value: 200
+        m_Name: Particle Noise Scale
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -114376,10 +114428,10 @@ VisualEffect:
       - m_Value: {x: 2.9, y: 3.1}
         m_Name: LifeRain
         m_Overridden: 1
-      - m_Value: {x: 0.1, y: 0.3}
+      - m_Value: {x: 0.1, y: 0.2}
         m_Name: SizeRandom
         m_Overridden: 1
-      - m_Value: {x: 0, y: 0}
+      - m_Value: {x: 0.1, y: 0.3}
         m_Name: FogLife
         m_Overridden: 1
     m_Vector3f:
@@ -114389,7 +114441,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 1.4980392, y: 1.4980392, z: 1.4980392, w: 1}
+      - m_Value: {x: 0.27612138, y: 0.3758228, z: 0.6886792, w: 1}
         m_Name: Particle Color
         m_Overridden: 1
     m_Uint:
@@ -117421,37 +117473,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &1927195228
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1927195229}
-  m_Layer: 0
-  m_Name: Cajas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1927195229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927195228}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1005764156}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1931148299
 GameObject:
   m_ObjectHideFlags: 0
@@ -122058,13 +122079,14 @@ SceneRoots:
   - {fileID: 1427083827}
   - {fileID: 2027406755}
   - {fileID: 423175890}
+  - {fileID: 1165499449}
   - {fileID: 93070856}
   - {fileID: 925041186}
   - {fileID: 404681707}
   - {fileID: 1532451595}
-  - {fileID: 1157603885}
   - {fileID: 1892312654}
   - {fileID: 1914229560}
+  - {fileID: 1157603885}
   - {fileID: 576298523}
   - {fileID: 1840371772}
   - {fileID: 405205106}
@@ -122103,7 +122125,6 @@ SceneRoots:
   - {fileID: 1626652389}
   - {fileID: 257045325}
   - {fileID: 405403694}
-  - {fileID: 1673170034}
   - {fileID: 1470696991}
   - {fileID: 1621347608}
   - {fileID: 3709561}
