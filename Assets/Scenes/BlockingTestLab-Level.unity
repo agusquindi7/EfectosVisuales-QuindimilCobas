@@ -63976,6 +63976,18 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 0}
@@ -65454,6 +65466,18 @@ PrefabInstance:
       value: StylizedLaser (8)
       objectReference: {fileID: 0}
     - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 0}
@@ -65606,7 +65630,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612326135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5e61651720103e4b827a42e6ac31dad, type: 3}
   m_Name: 
@@ -93584,7 +93608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &902383592
 Transform:
   m_ObjectHideFlags: 0
@@ -93634,9 +93658,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim:
-  - {fileID: 0}
+  - {fileID: 1520637251}
   - {fileID: 1612288944}
-  - {fileID: 0}
+  - {fileID: 612326136}
 --- !u!1001 &903445996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99976,6 +100000,18 @@ PrefabInstance:
     - target: {fileID: 1531185085779110312, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: audioSource
@@ -125319,6 +125355,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2483242998197537799, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -126425,6 +126477,18 @@ PrefabInstance:
     - target: {fileID: 1531185085779110312, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: audioSource
@@ -160363,6 +160427,18 @@ PrefabInstance:
       value: StylizedLaser (7)
       objectReference: {fileID: 0}
     - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 0}
@@ -160515,7 +160591,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520637250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5e61651720103e4b827a42e6ac31dad, type: 3}
   m_Name: 
@@ -174336,6 +174412,18 @@ PrefabInstance:
       value: StylizedLaser (6)
       objectReference: {fileID: 0}
     - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 0}
@@ -174488,7 +174576,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612288943}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5e61651720103e4b827a42e6ac31dad, type: 3}
   m_Name: 
@@ -179878,6 +179966,18 @@ PrefabInstance:
     - target: {fileID: 1531185085779110312, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: audioSource
@@ -193227,6 +193327,22 @@ PrefabInstance:
     - target: {fileID: 1531185085779110312, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: hitbox
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2320574811201549723, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
+      propertyPath: audioSource
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2483242998197537799, guid: 0516057eff712e743a4ecee195b4e3c1, type: 3}
       propertyPath: m_Layer
