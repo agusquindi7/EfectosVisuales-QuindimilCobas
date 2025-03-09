@@ -403,7 +403,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3b2a6b6bd8807db4a96c83b26fb09bd3, type: 2}
+  - {fileID: 2100000, guid: 031f259523fe97044b037785f0ab8886, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1067,7 +1067,7 @@ GameObject:
   - component: {fileID: 909413842}
   - component: {fileID: 909413841}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PRESS HERE TO BRING E-183 BACK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BRING BABITAS BACK
+  m_text: PRESS HERE TO BRING E-183 BACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1785,7 +1785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1569421136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1821,7 +1821,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1879,13 +1879,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569421135}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.008545503, y: 0.55648786, z: -0.6553469, w: 0.5106552}
+  m_LocalRotation: {x: -0.22886562, y: 0.5066195, z: -0.37798488, w: 0.7403274}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 47.571, y: 55.669, z: -77.946}
+  m_LocalEulerAnglesHint: {x: 2.529, y: 67.525, z: -52.404}
 --- !u!1 &1572864137
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class ScientistIdleState : ScientistBaseState
         sct.fovMesh.SetActive(false);
 
         sct.anim.SetBool("isAlerted", false);
+
+        sct.dialogues[0].SetActive(false);
     }
 
     public override void OnUpdate(FSM_Manager sct)
@@ -22,7 +24,9 @@ public class ScientistIdleState : ScientistBaseState
             if (!sct.hasAlreadySaid1)
             {
                 sct.hasAlreadySaid1 = true;
+
                 AudioManager.instance.AlertedScientists(sct.scientistAudios[0], .5f);
+                sct.dialogues[0].SetActive(true);
             }
             sct.counter += Time.deltaTime;
             sct.counter = Mathf.Clamp(sct.counter, 0, sct.timeIdle);
@@ -46,5 +50,6 @@ public class ScientistIdleState : ScientistBaseState
     public override void OnExit(FSM_Manager sct)
     {
         sct.anim.SetBool("isAlerted", true);
+        sct.dialogues[0].SetActive(false);
     }
 }

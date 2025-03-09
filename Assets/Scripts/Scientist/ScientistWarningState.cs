@@ -12,10 +12,12 @@ public class ScientistWarningState : ScientistBaseState
         sct.fovMesh.SetActive(false);
         if (!sct.hasAlreadySaid2)
         {
+            sct.dialogues[1].SetActive(true);
             AudioManager.instance.AlertedScientists(sct.scientistAudios[1], 1f);
             AudioManager.instance.PlayWarningMusic();
             sct.hasAlreadySaid2 = true;
         }
+
     }
 
     public override void OnUpdate(FSM_Manager sct)

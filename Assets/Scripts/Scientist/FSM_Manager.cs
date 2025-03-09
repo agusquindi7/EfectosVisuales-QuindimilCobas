@@ -30,6 +30,8 @@ public class FSM_Manager : MonoBehaviour
     public AudioClip[] scientistAudios;
     public bool hasAlreadySaid1 = false;
     public bool hasAlreadySaid2 = false;
+    [Header("Scientist Dialogues")]
+    public GameObject[] dialogues;
 
     private void Start()
     {
