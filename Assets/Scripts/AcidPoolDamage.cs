@@ -5,12 +5,23 @@ using UnityEngine;
 public class AcidPoolDamage : MonoBehaviour
 {
     [SerializeField] float damageAcidPool;
+    [SerializeField] FumesAntidote fumesAntidote;
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.GetComponent<PlayerLife>())
+        if (this.gameObject.name == "FirstFumesVolume")
         {
-            other.GetComponent<PlayerLife>().TakeDamage(damageAcidPool*Time.deltaTime);
+            if (other.GetComponent<PlayerLife>() && !fumesAntidote.HasDrankTheAntidote())
+            {
+                other.GetComponent<PlayerLife>().TakeDamage(damageAcidPool * Time.deltaTime);
+            }
+        }
+        if (this.gameObject.name == "Box Volume")
+        {
+            if (other.GetComponent<PlayerLife>())
+            {
+                other.GetComponent<PlayerLife>().TakeDamage(damageAcidPool * Time.deltaTime);
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Value: 0
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.95930636, g: 1.9144523, b: 0.92832875, a: 1}
+    m_Value: {r: 0.55396223, g: 0.8301887, b: 0.54353863, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Main Camera Profile
+  m_Name: Main Camera Profile 1
   m_EditorClassIdentifier: 
   components:
   - {fileID: -324955224526314426}
