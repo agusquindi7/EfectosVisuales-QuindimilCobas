@@ -13,10 +13,14 @@ public class FumesAntidote : MonoBehaviour
 
     private Material liquidWobbleMat; // Referencia al material original
 
+    private void Awake()
+    {
+        asAntidote.mute = true;
+    }
+
     private void Start()
     {
         //if (liquidWobbleRenderer == null) liquidWobbleRenderer = GetComponentInChildren<Renderer>();
-        asAntidote.mute = true;
         particles.Stop();
         liquidWobbleMat = liquidWobbleRenderer.material; // Forzar una instancia
         liquidWobbleMat.SetFloat("_Fill", fillStart);
